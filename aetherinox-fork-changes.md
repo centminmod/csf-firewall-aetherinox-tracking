@@ -17,6 +17,43 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
+## Repository State (as of 2025-12-18)
+
+| Repository      | HEAD Commit   | Date       | Message                                                                   |
+| --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
+| Official CSF    | `d04e808`     | 2025-09-04 | add CSF community sentiment, discussions and alternative discussion research |
+| Aetherinox Fork | `ae9c78a6f`   | 2025-12-18 | docs(mkdocs): update changelog                                            |
+
+---
+
+## Change Statistics
+
+| Metric            | Value      |
+| ----------------- | ---------- |
+| Lines added       | 58,556     |
+| Lines removed     | 26,788     |
+| Net change        | +31,768    |
+| Fork size         | 13,108 KB  |
+| Official size     | 2,910 KB   |
+| Size difference   | +10,198 KB |
+
+### Most Changed Files (by commit count)
+
+| Rank | File                              | Commits |
+| ---- | --------------------------------- | ------- |
+| 1    | `ConfigServer/Config.pm`          | 9       |
+| 2    | `ConfigServer/ServerCheck.pm`     | 9       |
+| 3    | `ConfigServer/RBLCheck.pm`        | 8       |
+| 4    | `ConfigServer/DisplayUI.pm`       | 7       |
+| 5    | `ConfigServer/DisplayResellerUI.pm` | 6     |
+| 6    | `ConfigServer/AbuseIP.pm`         | 5       |
+| 7    | `ConfigServer/CheckIP.pm`         | 5       |
+| 8    | `ConfigServer/CloudFlare.pm`      | 5       |
+| 9    | `ConfigServer/RegexMain.pm`       | 5       |
+| 10   | `ConfigServer/GetEthDev.pm`       | 4       |
+
+---
+
 ## New Files (31 files)
 
 Files that exist only in the Aetherinox fork.
@@ -706,7 +743,6 @@ All new configuration options added by the Aetherinox fork:
 | ------------------------- | ------- | ------------------------------------------------ | ----- |
 | `UI_LOGS_REFRESH_TIME`    | `"6"`   | Seconds between automatic log refreshes          | #25   |
 | `UI_LOGS_START_PAUSED`    | `"0"`   | Start with logs paused (1) or running (0)        | #25   |
-| `UI_LOGS_REFRESH`         | `"1"`   | Enable/disable log auto-refresh                  | -     |
 | `UI_RETRY_SHOW_REMAINING` | `"0"`   | Show remaining login attempts after failure      | -     |
 | `UI_BLOCK_PRIVATE_NET`    | `"1"`   | Block login from private network ranges          | -     |
 | `UI_CSP_ENABLED`          | `"0"`   | Enable Content-Security-Policy headers           | -     |
