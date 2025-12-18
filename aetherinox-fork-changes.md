@@ -26,6 +26,24 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
+## Release History
+
+The Aetherinox fork maintains versioned releases. See [all releases](https://github.com/Aetherinox/csf-firewall/tags).
+
+| Version | Date       | Commit                                                                              |
+| ------- | ---------- | ----------------------------------------------------------------------------------- |
+| [15.08](https://github.com/Aetherinox/csf-firewall/releases/tag/15.08) | 2025-12-13 | [`02ebbfaed`](https://github.com/Aetherinox/csf-firewall/commit/02ebbfaed) |
+| [15.07](https://github.com/Aetherinox/csf-firewall/releases/tag/15.07) | 2025-10-24 | [`96239db33`](https://github.com/Aetherinox/csf-firewall/commit/96239db33) |
+| [15.06](https://github.com/Aetherinox/csf-firewall/releases/tag/15.06) | 2025-10-16 | [`bf667609b`](https://github.com/Aetherinox/csf-firewall/commit/bf667609b) |
+| [15.05](https://github.com/Aetherinox/csf-firewall/releases/tag/15.05) | 2025-10-16 | [`ad225daf5`](https://github.com/Aetherinox/csf-firewall/commit/ad225daf5) |
+| [15.04](https://github.com/Aetherinox/csf-firewall/releases/tag/15.04) | 2025-10-15 | [`42b95dd81`](https://github.com/Aetherinox/csf-firewall/commit/42b95dd81) |
+| [15.03](https://github.com/Aetherinox/csf-firewall/releases/tag/15.03) | 2025-10-15 | [`e51345b19`](https://github.com/Aetherinox/csf-firewall/commit/e51345b19) |
+| [15.02](https://github.com/Aetherinox/csf-firewall/releases/tag/15.02) | 2025-10-14 | [`97a8f8a17`](https://github.com/Aetherinox/csf-firewall/commit/97a8f8a17) |
+| [15.01](https://github.com/Aetherinox/csf-firewall/releases/tag/15.01) | 2025-10-14 | [`55c71bc7e`](https://github.com/Aetherinox/csf-firewall/commit/55c71bc7e) |
+| [15.00](https://github.com/Aetherinox/csf-firewall/releases/tag/15.00) | 2025-10-14 | [`40dc848e3`](https://github.com/Aetherinox/csf-firewall/commit/40dc848e3) |
+
+---
+
 ## Change Statistics
 
 | Metric            | Value      |
