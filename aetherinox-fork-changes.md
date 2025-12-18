@@ -22,7 +22,7 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
 | Official CSF    | `d04e808`     | 2025-09-04 | add CSF community sentiment, discussions and alternative discussion research |
-| Aetherinox Fork | `ae9c78a6f`   | 2025-12-18 | docs(mkdocs): update changelog                                            |
+| Aetherinox Fork | `7f5ae76b2`   | 2025-12-18 | Sync 12/18/2025 12:13 UTC                                                 |
 
 ---
 
@@ -788,4 +788,4 @@ UI commits:
 
 ---
 
-Last updated: 2025-12-18
+Last updated: 2025-12-19
