@@ -17,12 +17,12 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2025-12-18)
+## Repository State (as of 2025-12-19)
 
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
-| Official CSF    | `d04e808`     | 2025-09-04 | add CSF community sentiment, discussions and alternative discussion research |
-| Aetherinox Fork | `7f5ae76b2`   | 2025-12-18 | Sync 12/18/2025 12:13 UTC                                                 |
+| Official CSF    | [`d04e808`](https://github.com/centminmod/configserver-scripts/commit/d04e808)     | 2025-09-04 | add CSF community sentiment, discussions and alternative discussion research |
+| Aetherinox Fork | [`7f5ae76b2`](https://github.com/Aetherinox/csf-firewall/commit/7f5ae76b2)   | 2025-12-18 | Sync 12/18/2025 12:13 UTC                                                 |
 
 ---
 
@@ -62,52 +62,52 @@ Files that exist only in the Aetherinox fork.
 
 | File                                                             | Description              | Initial Commit                                                   |
 | ---------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------- |
-| `csf-firewall-aetherinox/src/csf/csf-logo.svg`                   | Main CSF logo (SVG)      | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/csf/csf-logo-alt.svg`               | Alternate CSF logo (SVG) | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/csf/csf.png`                        | CSF logo (PNG)           | `62743b25d` chore: daily cleanup                                 |
-| `csf-firewall-aetherinox/src/da/images/csf-logo.svg`             | DirectAdmin logo         | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/da/images/csf-logo-alt.svg`         | DirectAdmin alt logo     | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/da/images/csf.png`                  | DirectAdmin logo PNG     | `62743b25d` chore: daily cleanup                                 |
-| `csf-firewall-aetherinox/src/interworx/images/csf-logo.svg`      | InterWorx logo           | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/interworx/images/csf-logo-alt.svg`  | InterWorx alt logo       | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/interworx/images/csf.png`           | InterWorx logo PNG       | `62743b25d` chore: daily cleanup                                 |
-| `csf-firewall-aetherinox/src/ui/images/csf-logo.svg`             | Generic UI logo          | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/ui/images/csf-logo-alt.svg`         | Generic UI alt logo      | `9b1711ac1` docs(img): update csf logos                          |
-| `csf-firewall-aetherinox/src/ui/images/csf.png`                  | Generic UI logo PNG      | `62743b25d` chore: daily cleanup                                 |
-| `csf-firewall-aetherinox/src/webmin/csf/images/csf-logo.svg`     | Webmin logo              | `716cd916e` chore: remove excess images, migrate to name scheme  |
-| `csf-firewall-aetherinox/src/webmin/csf/images/csf-logo-alt.svg` | Webmin alt logo          | `716cd916e` chore: remove excess images, migrate to name scheme  |
-| `csf-firewall-aetherinox/src/webmin/csf/images/csf.png`          | Webmin logo PNG          | `62743b25d` chore: daily cleanup                                 |
+| `csf-firewall-aetherinox/src/csf/csf-logo.svg`                   | Main CSF logo (SVG)      | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/csf/csf-logo-alt.svg`               | Alternate CSF logo (SVG) | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/csf/csf.png`                        | CSF logo (PNG)           | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup                                 |
+| `csf-firewall-aetherinox/src/da/images/csf-logo.svg`             | DirectAdmin logo         | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/da/images/csf-logo-alt.svg`         | DirectAdmin alt logo     | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/da/images/csf.png`                  | DirectAdmin logo PNG     | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup                                 |
+| `csf-firewall-aetherinox/src/interworx/images/csf-logo.svg`      | InterWorx logo           | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/interworx/images/csf-logo-alt.svg`  | InterWorx alt logo       | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/interworx/images/csf.png`           | InterWorx logo PNG       | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup                                 |
+| `csf-firewall-aetherinox/src/ui/images/csf-logo.svg`             | Generic UI logo          | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/ui/images/csf-logo-alt.svg`         | Generic UI alt logo      | [`9b1711ac1`](https://github.com/Aetherinox/csf-firewall/commit/9b1711ac1) docs(img): update csf logos                          |
+| `csf-firewall-aetherinox/src/ui/images/csf.png`                  | Generic UI logo PNG      | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup                                 |
+| `csf-firewall-aetherinox/src/webmin/csf/images/csf-logo.svg`     | Webmin logo              | [`716cd916e`](https://github.com/Aetherinox/csf-firewall/commit/716cd916e) chore: remove excess images, migrate to name scheme  |
+| `csf-firewall-aetherinox/src/webmin/csf/images/csf-logo-alt.svg` | Webmin alt logo          | [`716cd916e`](https://github.com/Aetherinox/csf-firewall/commit/716cd916e) chore: remove excess images, migrate to name scheme  |
+| `csf-firewall-aetherinox/src/webmin/csf/images/csf.png`          | Webmin logo PNG          | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup                                 |
 
 ### JavaScript Assets
 
 | File                                                             | Description         | Initial Commit                                               |
 | ---------------------------------------------------------------- | ------------------- | ------------------------------------------------------------ |
-| `csf-firewall-aetherinox/src/csf/csf.min.js`                     | Minified CSF JS     | `4f3d228e3` feat: add new theme selector; dark & light theme |
-| `csf-firewall-aetherinox/src/csf/csfont.min.js`                  | Font JavaScript     | `718dddcfa` Sync 12/01/2025                                  |
-| `csf-firewall-aetherinox/src/da/images/csf.min.js`               | DirectAdmin JS      | `4f3d228e3` feat: add new theme selector; dark & light theme |
-| `csf-firewall-aetherinox/src/da/images/csfont.min.js`            | DirectAdmin font JS | `718dddcfa` Sync 12/01/2025                                  |
-| `csf-firewall-aetherinox/src/interworx/images/csf.min.js`        | InterWorx JS        | `4f3d228e3` feat: add new theme selector; dark & light theme |
-| `csf-firewall-aetherinox/src/interworx/images/csfont.min.js`     | InterWorx font JS   | `718dddcfa` Sync 12/01/2025                                  |
-| `csf-firewall-aetherinox/src/ui/images/csf.min.js`               | Generic UI JS       | `4f3d228e3` feat: add new theme selector; dark & light theme |
-| `csf-firewall-aetherinox/src/ui/images/csfont.min.js`            | Generic UI font JS  | `718dddcfa` Sync 12/01/2025                                  |
-| `csf-firewall-aetherinox/src/webmin/csf/images/csf.min.js`       | Webmin JS           | `4f3d228e3` feat: add new theme selector; dark & light theme |
-| `csf-firewall-aetherinox/src/webmin/csf/images/csfont.min.js`    | Webmin font JS      | `718dddcfa` Sync 12/01/2025                                  |
+| `csf-firewall-aetherinox/src/csf/csf.min.js`                     | Minified CSF JS     | [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3) feat: add new theme selector; dark & light theme |
+| `csf-firewall-aetherinox/src/csf/csfont.min.js`                  | Font JavaScript     | [`718dddcfa`](https://github.com/Aetherinox/csf-firewall/commit/718dddcfa) Sync 12/01/2025                                  |
+| `csf-firewall-aetherinox/src/da/images/csf.min.js`               | DirectAdmin JS      | [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3) feat: add new theme selector; dark & light theme |
+| `csf-firewall-aetherinox/src/da/images/csfont.min.js`            | DirectAdmin font JS | [`718dddcfa`](https://github.com/Aetherinox/csf-firewall/commit/718dddcfa) Sync 12/01/2025                                  |
+| `csf-firewall-aetherinox/src/interworx/images/csf.min.js`        | InterWorx JS        | [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3) feat: add new theme selector; dark & light theme |
+| `csf-firewall-aetherinox/src/interworx/images/csfont.min.js`     | InterWorx font JS   | [`718dddcfa`](https://github.com/Aetherinox/csf-firewall/commit/718dddcfa) Sync 12/01/2025                                  |
+| `csf-firewall-aetherinox/src/ui/images/csf.min.js`               | Generic UI JS       | [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3) feat: add new theme selector; dark & light theme |
+| `csf-firewall-aetherinox/src/ui/images/csfont.min.js`            | Generic UI font JS  | [`718dddcfa`](https://github.com/Aetherinox/csf-firewall/commit/718dddcfa) Sync 12/01/2025                                  |
+| `csf-firewall-aetherinox/src/webmin/csf/images/csf.min.js`       | Webmin JS           | [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3) feat: add new theme selector; dark & light theme |
+| `csf-firewall-aetherinox/src/webmin/csf/images/csfont.min.js`    | Webmin font JS      | [`718dddcfa`](https://github.com/Aetherinox/csf-firewall/commit/718dddcfa) Sync 12/01/2025                                  |
 
 ### New Shell Scripts
 
 | File                                     | Description               | Initial Commit                          |
 | ---------------------------------------- | ------------------------- | --------------------------------------- |
-| `csf-firewall-aetherinox/src/csfpre.sh`  | Pre-firewall hook script  | `62743b25d` chore: daily cleanup        |
-| `csf-firewall-aetherinox/src/csfpost.sh` | Post-firewall hook script | `62743b25d` chore: daily cleanup        |
-| `csf-firewall-aetherinox/src/global.sh`  | Global shell functions    | `25a7d5911` docs(man): update man pages |
+| `csf-firewall-aetherinox/src/csfpre.sh`  | Pre-firewall hook script  | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup        |
+| `csf-firewall-aetherinox/src/csfpost.sh` | Post-firewall hook script | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup        |
+| `csf-firewall-aetherinox/src/global.sh`  | Global shell functions    | [`25a7d5911`](https://github.com/Aetherinox/csf-firewall/commit/25a7d5911) docs(man): update man pages |
 
 ### Configuration and SSL
 
 | File                                                    | Description                | Initial Commit                                 |
 | ------------------------------------------------------- | -------------------------- | ---------------------------------------------- |
-| `csf-firewall-aetherinox/src/regex.txt`                 | Custom regex patterns      | `62743b25d` chore: daily cleanup               |
-| `csf-firewall-aetherinox/src/ui/ssl-expired/server.crt` | Expired SSL cert (testing) | `5de621cd4` perf(ui): add preload optimization |
-| `csf-firewall-aetherinox/src/ui/ssl-expired/server.key` | Expired SSL key (testing)  | `5de621cd4` perf(ui): add preload optimization |
+| `csf-firewall-aetherinox/src/regex.txt`                 | Custom regex patterns      | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) chore: daily cleanup               |
+| `csf-firewall-aetherinox/src/ui/ssl-expired/server.crt` | Expired SSL cert (testing) | [`5de621cd4`](https://github.com/Aetherinox/csf-firewall/commit/5de621cd4) perf(ui): add preload optimization |
+| `csf-firewall-aetherinox/src/ui/ssl-expired/server.key` | Expired SSL key (testing)  | [`5de621cd4`](https://github.com/Aetherinox/csf-firewall/commit/5de621cd4) perf(ui): add preload optimization |
 
 ---
 
@@ -121,17 +121,17 @@ Files that exist only in the Aetherinox fork.
 
 | Commit      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
-| `365e582f3` | fix(ui): incorrectly adding gap between first and second line in web interface           |
-| `758e1180e` | fix(cli): detect tty for colored or clean output in responses                            |
-| `c3c1127f7` | fix(cwp): sanitize and strip color codes for cwp version status                          |
-| `ec339615a` | chore(csf): update log functionality output for users                                    |
-| `cbc62a6d2` | style(csf): clean up command dictionary                                                  |
-| `86ff22164` | feat(license): add new funcs for license and insiders checks                             |
-| `05a25350f` | feat(cli): add command `--listports`, `-lp` #57                                          |
-| `3ba60d17f` | feat(cli): add command `--removeport`, `-rp` #57                                         |
-| `ac9e05a6a` | feat(cli): add command `--addport`, `-ap` #57                                            |
-| `7f40ff7cd` | refactor(csf): update module output for updates                                          |
-| `6a8d569b8` | feat(csf): add warning to console output when using default web ui username and password |
+| [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) | fix(ui): incorrectly adding gap between first and second line in web interface           |
+| [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e) | fix(cli): detect tty for colored or clean output in responses                            |
+| [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7) | fix(cwp): sanitize and strip color codes for cwp version status                          |
+| [`ec339615a`](https://github.com/Aetherinox/csf-firewall/commit/ec339615a) | chore(csf): update log functionality output for users                                    |
+| [`cbc62a6d2`](https://github.com/Aetherinox/csf-firewall/commit/cbc62a6d2) | style(csf): clean up command dictionary                                                  |
+| [`86ff22164`](https://github.com/Aetherinox/csf-firewall/commit/86ff22164) | feat(license): add new funcs for license and insiders checks                             |
+| [`05a25350f`](https://github.com/Aetherinox/csf-firewall/commit/05a25350f) | feat(cli): add command `--listports`, `-lp` #57                                          |
+| [`3ba60d17f`](https://github.com/Aetherinox/csf-firewall/commit/3ba60d17f) | feat(cli): add command `--removeport`, `-rp` #57                                         |
+| [`ac9e05a6a`](https://github.com/Aetherinox/csf-firewall/commit/ac9e05a6a) | feat(cli): add command `--addport`, `-ap` #57                                            |
+| [`7f40ff7cd`](https://github.com/Aetherinox/csf-firewall/commit/7f40ff7cd) | refactor(csf): update module output for updates                                          |
+| [`6a8d569b8`](https://github.com/Aetherinox/csf-firewall/commit/6a8d569b8) | feat(csf): add warning to console output when using default web ui username and password |
 
 **Key Changes:**
 
@@ -149,7 +149,7 @@ Files that exist only in the Aetherinox fork.
 
 | Commit      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
-| `6a8d569b8` | feat(csf): add warning to console output when using default web ui username and password |
+| [`6a8d569b8`](https://github.com/Aetherinox/csf-firewall/commit/6a8d569b8) | feat(csf): add warning to console output when using default web ui username and password |
 
 **Key Changes:**
 
@@ -163,20 +163,20 @@ Files that exist only in the Aetherinox fork.
 
 | Commit      | Description                                                                               |
 | ----------- | ----------------------------------------------------------------------------------------- |
-| `f8f7f0d03` | feat(ui): add new setting `SPONSOR_HIDE_ICON` #72                                         |
-| `9a1625b96` | style(generic): update formatting                                                         |
-| `78a50b947` | chore: add input value type to LF_MODSEC_PERM comments #59                                |
-| `a4a27599e` | chore: update config description for `LF_MODSEC` #59                                      |
-| `ae27d1eb0` | feat: add insiders config items                                                           |
-| `9a5cacfe0` | feat(ui): add highlighter classes "Firewall Configuration" page                           |
-| `80dd350a2` | feat(ui): add two settings: `UI_LOGS_REFRESH_TIME` and `UI_LOGS_START_PAUSED` #25         |
-| `fba868408` | refactor(conf): format comments for web interface                                         |
-| `a07d9861b` | feat: add content-security-policy to web interface; new settings                          |
-| `21338f61b` | feat: add login failure notification to login page; new setting `UI_RETRY_SHOW_REMAINING` |
-| `aa1c52139` | chore(conf): update configs                                                               |
-| `915bd564c` | feat: add new `csf.conf` setting `UI_BLOCK_PRIVATE_NET`                                   |
-| `4b6cc3689` | feat: add env var `UI_LOGS_REFRESH`                                                       |
-| `488e02495` | feat: add env var `UI_BLOCK_PRIVATE_NET`                                                  |
+| [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03) | feat(ui): add new setting `SPONSOR_HIDE_ICON` #72                                         |
+| [`9a1625b96`](https://github.com/Aetherinox/csf-firewall/commit/9a1625b96) | style(generic): update formatting                                                         |
+| [`78a50b947`](https://github.com/Aetherinox/csf-firewall/commit/78a50b947) | chore: add input value type to LF_MODSEC_PERM comments #59                                |
+| [`a4a27599e`](https://github.com/Aetherinox/csf-firewall/commit/a4a27599e) | chore: update config description for `LF_MODSEC` #59                                      |
+| [`ae27d1eb0`](https://github.com/Aetherinox/csf-firewall/commit/ae27d1eb0) | feat: add insiders config items                                                           |
+| [`9a5cacfe0`](https://github.com/Aetherinox/csf-firewall/commit/9a5cacfe0) | feat(ui): add highlighter classes "Firewall Configuration" page                           |
+| [`80dd350a2`](https://github.com/Aetherinox/csf-firewall/commit/80dd350a2) | feat(ui): add two settings: `UI_LOGS_REFRESH_TIME` and `UI_LOGS_START_PAUSED` #25         |
+| [`fba868408`](https://github.com/Aetherinox/csf-firewall/commit/fba868408) | refactor(conf): format comments for web interface                                         |
+| [`a07d9861b`](https://github.com/Aetherinox/csf-firewall/commit/a07d9861b) | feat: add content-security-policy to web interface; new settings                          |
+| [`21338f61b`](https://github.com/Aetherinox/csf-firewall/commit/21338f61b) | feat: add login failure notification to login page; new setting `UI_RETRY_SHOW_REMAINING` |
+| [`aa1c52139`](https://github.com/Aetherinox/csf-firewall/commit/aa1c52139) | chore(conf): update configs                                                               |
+| [`915bd564c`](https://github.com/Aetherinox/csf-firewall/commit/915bd564c) | feat: add new `csf.conf` setting `UI_BLOCK_PRIVATE_NET`                                   |
+| [`4b6cc3689`](https://github.com/Aetherinox/csf-firewall/commit/4b6cc3689) | feat: add env var `UI_LOGS_REFRESH`                                                       |
+| [`488e02495`](https://github.com/Aetherinox/csf-firewall/commit/488e02495) | feat: add env var `UI_BLOCK_PRIVATE_NET`                                                  |
 
 **New Configuration Options:**
 
@@ -201,12 +201,12 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 | Commit      | Description                                                                                |
 | ----------- | ------------------------------------------------------------------------------------------ |
-| `365e582f3` | fix(ui): incorrectly adding gap between first and second line in web interface             |
-| `69a1c24cf` | fix(webmin): add webmin `settings` button to interface without breaking theme js           |
-| `4bd6de54b` | fix(webmin): ensure each setting is properly formatted, pre-wrap descriptions              |
-| `f8f7f0d03` | feat(ui): add new setting `SPONSOR_HIDE_ICON` #72                                          |
-| `2a061110e` | feat(ui): hide sponsor button if `SPONSOR_LICENSE` specified, or `UI_SPONSOR_HIDE = 1` #72 |
-| `185654edc` | feat(ui): remove beating heart animation for sponsor icon #72                              |
+| [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) | fix(ui): incorrectly adding gap between first and second line in web interface             |
+| [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) | fix(webmin): add webmin `settings` button to interface without breaking theme js           |
+| [`4bd6de54b`](https://github.com/Aetherinox/csf-firewall/commit/4bd6de54b) | fix(webmin): ensure each setting is properly formatted, pre-wrap descriptions              |
+| [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03) | feat(ui): add new setting `SPONSOR_HIDE_ICON` #72                                          |
+| [`2a061110e`](https://github.com/Aetherinox/csf-firewall/commit/2a061110e) | feat(ui): hide sponsor button if `SPONSOR_LICENSE` specified, or `UI_SPONSOR_HIDE = 1` #72 |
+| [`185654edc`](https://github.com/Aetherinox/csf-firewall/commit/185654edc) | feat(ui): remove beating heart animation for sponsor icon #72                              |
 
 **Key Changes:**
 
@@ -225,8 +225,8 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 | Commit      | Description                                                                  |
 | ----------- | ---------------------------------------------------------------------------- |
-| `fb77803d9` | chore: update csf main repo for `v15.01` server changes                      |
-| `ee9c4339a` | refactor: update headers, commenting in config files, line length conformity |
+| [`fb77803d9`](https://github.com/Aetherinox/csf-firewall/commit/fb77803d9) | chore: update csf main repo for `v15.01` server changes                      |
+| [`ee9c4339a`](https://github.com/Aetherinox/csf-firewall/commit/ee9c4339a) | refactor: update headers, commenting in config files, line length conformity |
 
 **Changes:** Header updates, code formatting
 
@@ -335,7 +335,7 @@ All platform configs have been modified with formatting updates and new options:
 | `cwp/` directory | CWP interface        |
 | `csf.cwp.*`      | CWP-specific configs |
 
-Commit `197e93acc`: Changed branding from "CentOS Web Panel" to "Control Web Panel"
+Commit [`197e93acc`](https://github.com/Aetherinox/csf-firewall/commit/197e93acc): Changed branding from "CentOS Web Panel" to "Control Web Panel"
 
 ### CyberPanel Integration
 
@@ -363,8 +363,8 @@ Commit `197e93acc`: Changed branding from "CentOS Web Panel" to "Control Web Pan
 | File                             | Changes       |
 | -------------------------------- | ------------- |
 | `webmin/csf/` directory          | Webmin module |
-| New settings button              | `69a1c24cf`   |
-| AlmaLinux/Rocky10/RedHat support | `38c4f2aff`   |
+| New settings button              | [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf)   |
+| AlmaLinux/Rocky10/RedHat support | [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff)   |
 
 ### Generic UI
 
@@ -440,20 +440,20 @@ Commit `197e93acc`: Changed branding from "CentOS Web Panel" to "Control Web Pan
 
 | Fix                                | Commit      |
 | ---------------------------------- | ----------- |
-| TTY detection for clean CLI output | `758e1180e` |
-| Color code sanitization for CWP    | `c3c1127f7` |
-| UI gap in Firewall Configuration   | `365e582f3` |
-| Webmin settings button JS          | `69a1c24cf` |
-| DirectAdmin install error          | `6e85c7a1b` |
+| TTY detection for clean CLI output | [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e) |
+| Color code sanitization for CWP    | [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7) |
+| UI gap in Firewall Configuration   | [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) |
+| Webmin settings button JS          | [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) |
+| DirectAdmin install error          | [`6e85c7a1b`](https://github.com/Aetherinox/csf-firewall/commit/6e85c7a1b) |
 
 ### New Integrations
 
 | Integration                  | Description              | Commit      |
 | ---------------------------- | ------------------------ | ----------- |
-| AbuseIPDB blocklist template | IP blocklist integration | `7dbe65c90` |
-| AlmaLinux support (Webmin)   | OS support               | `38c4f2aff` |
-| Rocky Linux 10 support       | OS support               | `38c4f2aff` |
-| RedHat support (Webmin)      | OS support               | `38c4f2aff` |
+| AbuseIPDB blocklist template | IP blocklist integration | [`7dbe65c90`](https://github.com/Aetherinox/csf-firewall/commit/7dbe65c90) |
+| AlmaLinux support (Webmin)   | OS support               | [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff) |
+| Rocky Linux 10 support       | OS support               | [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff) |
+| RedHat support (Webmin)      | OS support               | [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff) |
 
 ---
 
@@ -465,7 +465,7 @@ This section provides code-level analysis of key changes derived from commit exa
 
 Three new CLI commands were added for port management without manual config editing:
 
-#### `--listports` / `-lp` (Commit `05a25350f`)
+#### `--listports` / `-lp` (Commit [`05a25350f`](https://github.com/Aetherinox/csf-firewall/commit/05a25350f))
 
 **Function:** `portsList()` - 59 lines added to `src/csf.pl`
 
@@ -477,7 +477,7 @@ Three new CLI commands were added for port management without manual config edit
 
 **Usage:** `csf --listports` or `csf -lp`
 
-#### `--addport` / `-ap` (Commit `ac9e05a6a`)
+#### `--addport` / `-ap` (Commit [`ac9e05a6a`](https://github.com/Aetherinox/csf-firewall/commit/ac9e05a6a))
 
 **Function:** `portAdd()` - 162 lines added
 
@@ -491,7 +491,7 @@ Three new CLI commands were added for port management without manual config edit
 
 **Usage:** `csf --addport TCP_IN:8080` or `csf -ap UDP_IN:5353`
 
-#### `--removeport` / `-rp` (Commit `3ba60d17f`)
+#### `--removeport` / `-rp` (Commit [`3ba60d17f`](https://github.com/Aetherinox/csf-firewall/commit/3ba60d17f))
 
 **Function:** `portRemove()` - 118 lines added
 
@@ -505,7 +505,7 @@ Three new CLI commands were added for port management without manual config edit
 
 **Usage:** `csf --removeport TCP_IN:8080` or `csf -rp UDP_IN:5353`
 
-### Theme System (Commit `4f3d228e3`)
+### Theme System (Commit [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3))
 
 **Scope:** 21 files modified across all platform directories
 
@@ -527,7 +527,7 @@ Three new CLI commands were added for port management without manual config edit
 - `src/ui/images/configserver.css` and `csf.min.js`
 - `src/webmin/csf/images/configserver.css` and `csf.min.js`
 
-### License and Insiders System (Commit `86ff22164`)
+### License and Insiders System (Commit [`86ff22164`](https://github.com/Aetherinox/csf-firewall/commit/86ff22164))
 
 **New Functions in `src/csf.pl`:** 79 lines added
 
@@ -547,7 +547,7 @@ Three new CLI commands were added for port management without manual config edit
 - Accepts optional parameter to avoid duplicate server requests
 - Returns: 0 (Stable channel) or 1 (Insiders channel)
 
-### TTY Detection (Commit `758e1180e`)
+### TTY Detection (Commit [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e))
 
 **Changes in `doversion()` function:** 7 lines modified
 
@@ -564,7 +564,7 @@ if ( !$is_tty ) {
 
 **Impact:** CSF automatically detects output context - colorized for terminals, clean for web panels.
 
-### Output Sanitization (Commit `c3c1127f7`)
+### Output Sanitization (Commit [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7))
 
 **New Helper Functions:** 78 lines added to `src/csf.pl`
 
@@ -583,7 +583,7 @@ if ( !$is_tty ) {
   - `'` → `&#39;`
 - Prevents HTML/JavaScript injection via version strings
 
-### Security: Default Credential Warning (Commit `6a8d569b8`)
+### Security: Default Credential Warning (Commit [`6a8d569b8`](https://github.com/Aetherinox/csf-firewall/commit/6a8d569b8))
 
 **Scope:** 424 lines added across `src/csf.pl`, `src/lfd.pl`, `src/global.sh`
 
@@ -612,7 +612,7 @@ elsif ( $config{UI_PASS} eq "" or $config{UI_PASS} eq "password" ) {
 
 **Impact:** Prevents web UI from starting with insecure default credentials.
 
-### Security: Content Security Policy (Commit `a07d9861b`)
+### Security: Content Security Policy (Commit [`a07d9861b`](https://github.com/Aetherinox/csf-firewall/commit/a07d9861b))
 
 **New Configuration Options:**
 
@@ -635,7 +635,7 @@ font-src 'self' https://fonts.gstatic.com;
 
 **Protection:** Prevents XSS, data injection, and clickjacking attacks (OWASP A03:2021, A07:2021).
 
-### Security: Private Network Blocking (Commit `915bd564c`)
+### Security: Private Network Blocking (Commit [`915bd564c`](https://github.com/Aetherinox/csf-firewall/commit/915bd564c))
 
 **New Configuration Option:** `UI_BLOCK_PRIVATE_NET = "1"` (enabled by default)
 
@@ -648,7 +648,7 @@ font-src 'self' https://fonts.gstatic.com;
 
 **Impact:** Prevents unauthorized access via local interface IPs and container escape attacks.
 
-### AbuseIPDB Integration (Commit `7dbe65c90`)
+### AbuseIPDB Integration (Commit [`7dbe65c90`](https://github.com/Aetherinox/csf-firewall/commit/7dbe65c90))
 
 **File Modified:** `src/csf.blocklists` - 16 lines added
 
@@ -666,7 +666,7 @@ ABUSEIPDB|86400|10000|https://api.abuseipdb.com/api/v2/blacklist?key=YOUR_API_KE
 
 **Impact:** Enables integration with AbuseIPDB threat intelligence for automated blocking of known malicious IPs.
 
-### AlmaLinux/Rocky10/RedHat Support (Commit `38c4f2aff`)
+### AlmaLinux/Rocky10/RedHat Support (Commit [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff))
 
 **Files Modified:** 7 files (`src/global.sh` + all install scripts)
 
@@ -681,7 +681,7 @@ CSF_WEBMIN_LIBEXEC_HOME="/usr/libexec/webmin"  # AlmaLinux, RedHat, Rocky 10
 
 **Impact:** Resolves Webmin module installation failures on RHEL-based systems.
 
-### UI: Log Refresh Controls (Commit `80dd350a2`)
+### UI: Log Refresh Controls (Commit [`80dd350a2`](https://github.com/Aetherinox/csf-firewall/commit/80dd350a2))
 
 **New Configuration Options:**
 
@@ -695,7 +695,7 @@ CSF_WEBMIN_LIBEXEC_HOME="/usr/libexec/webmin"  # AlmaLinux, RedHat, Rocky 10
 - Respects pause flag before countdown
 - Pause button shows "Pause" or "Continue" based on state
 
-### UI: Sponsor Visibility Controls (Commits `f8f7f0d03`, `2a061110e`, `185654edc`)
+### UI: Sponsor Visibility Controls (Commits [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03), [`2a061110e`](https://github.com/Aetherinox/csf-firewall/commit/2a061110e), [`185654edc`](https://github.com/Aetherinox/csf-firewall/commit/185654edc))
 
 **Configuration Options:**
 
@@ -712,7 +712,7 @@ print "<button id='btn-sponsor'...></button>"
 
 **Additional Change:** Removed beating heart animation from sponsor icon (class `heart` removed from CSS).
 
-### UI: Login Failure Notification (Commit `21338f61b`)
+### UI: Login Failure Notification (Commit [`21338f61b`](https://github.com/Aetherinox/csf-firewall/commit/21338f61b))
 
 **New Configuration Option:** `UI_RETRY_SHOW_REMAINING = "0"`
 
@@ -722,7 +722,7 @@ print "<button id='btn-sponsor'...></button>"
 - If enabled, displays count of remaining attempts before lockout
 - Helps users understand brute-force protection is active
 
-### UI: Firewall Configuration Gap Fix (Commit `365e582f3`)
+### UI: Firewall Configuration Gap Fix (Commit [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3))
 
 **Issue:** Extra vertical gaps appearing between first and second lines in the Firewall Configuration web interface.
 
@@ -756,35 +756,35 @@ All new configuration options added by the Aetherinox fork:
 
 ## Commit Reference
 
-Base sync commit: `718dddcfa` - Initial sync from official CSF v15.00
+Base sync commit: [`718dddcfa`](https://github.com/Aetherinox/csf-firewall/commit/718dddcfa) - Initial sync from official CSF v15.00
 
 Key feature commits:
 
-- `4f3d228e3` - Theme selector (dark/light) - 21 files, +7,231 lines
-- `05a25350f` - Port listing command (`--listports/-lp`) - +59 lines
-- `3ba60d17f` - Port removal command (`--removeport/-rp`) - +118 lines
-- `ac9e05a6a` - Port addition command (`--addport/-ap`) - +162 lines
-- `86ff22164` - License and insiders functions - +79 lines
-- `f8f7f0d03` - Sponsor hide icon setting - 8 files
-- `7dbe65c90` - AbuseIPDB blocklist template - +16 lines
-- `38c4f2aff` - AlmaLinux/Rocky10/RedHat support - 7 files
+- [`4f3d228e3`](https://github.com/Aetherinox/csf-firewall/commit/4f3d228e3) - Theme selector (dark/light) - 21 files, +7,231 lines
+- [`05a25350f`](https://github.com/Aetherinox/csf-firewall/commit/05a25350f) - Port listing command (`--listports/-lp`) - +59 lines
+- [`3ba60d17f`](https://github.com/Aetherinox/csf-firewall/commit/3ba60d17f) - Port removal command (`--removeport/-rp`) - +118 lines
+- [`ac9e05a6a`](https://github.com/Aetherinox/csf-firewall/commit/ac9e05a6a) - Port addition command (`--addport/-ap`) - +162 lines
+- [`86ff22164`](https://github.com/Aetherinox/csf-firewall/commit/86ff22164) - License and insiders functions - +79 lines
+- [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03) - Sponsor hide icon setting - 8 files
+- [`7dbe65c90`](https://github.com/Aetherinox/csf-firewall/commit/7dbe65c90) - AbuseIPDB blocklist template - +16 lines
+- [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff) - AlmaLinux/Rocky10/RedHat support - 7 files
 
 Security commits:
 
-- `6a8d569b8` - Default credential warning - 3 files, +424 lines
-- `a07d9861b` - Content-Security-Policy headers - 7 files
-- `915bd564c` - Private network blocking - 7 files
-- `c3c1127f7` - Output sanitization functions - +78 lines
-- `758e1180e` - TTY detection for safe output - +7 lines
+- [`6a8d569b8`](https://github.com/Aetherinox/csf-firewall/commit/6a8d569b8) - Default credential warning - 3 files, +424 lines
+- [`a07d9861b`](https://github.com/Aetherinox/csf-firewall/commit/a07d9861b) - Content-Security-Policy headers - 7 files
+- [`915bd564c`](https://github.com/Aetherinox/csf-firewall/commit/915bd564c) - Private network blocking - 7 files
+- [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7) - Output sanitization functions - +78 lines
+- [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e) - TTY detection for safe output - +7 lines
 
 UI commits:
 
-- `365e582f3` - Comment formatting fix
-- `69a1c24cf` - Webmin settings button
-- `80dd350a2` - Log refresh controls
-- `21338f61b` - Login failure notification
-- `2a061110e` - Sponsor button conditional display
-- `185654edc` - Remove heart animation
+- [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) - Comment formatting fix
+- [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) - Webmin settings button
+- [`80dd350a2`](https://github.com/Aetherinox/csf-firewall/commit/80dd350a2) - Log refresh controls
+- [`21338f61b`](https://github.com/Aetherinox/csf-firewall/commit/21338f61b) - Login failure notification
+- [`2a061110e`](https://github.com/Aetherinox/csf-firewall/commit/2a061110e) - Sponsor button conditional display
+- [`185654edc`](https://github.com/Aetherinox/csf-firewall/commit/185654edc) - Remove heart animation
 
 ---
 
