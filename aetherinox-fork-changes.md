@@ -17,12 +17,12 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2025-12-19)
+## Repository State (as of 2025-12-20)
 
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
-| Official CSF    | [`a3af04c`](https://github.com/centminmod/configserver-scripts/commit/a3af04c)     | 2025-12-19 | update readme |
-| Aetherinox Fork | [`7f5ae76b2`](https://github.com/Aetherinox/csf-firewall/commit/7f5ae76b2)   | 2025-12-18 | Sync 12/18/2025 12:13 UTC                                                 |
+| Official CSF    | [`4793f7c`](https://github.com/centminmod/configserver-scripts/commit/4793f7c)     | 2025-12-20 | update readme |
+| Aetherinox Fork | [`0ff3594d0`](https://github.com/Aetherinox/csf-firewall/commit/0ff3594d0)   | 2025-12-20 | Sync 12/20/2025 00:19 UTC                                                 |
 
 ---
 
@@ -181,6 +181,7 @@ Files that exist only in the Aetherinox fork.
 
 | Commit      | Description                                                                               |
 | ----------- | ----------------------------------------------------------------------------------------- |
+| [`8e720a86d`](https://github.com/Aetherinox/csf-firewall/commit/8e720a86d) | feat(sponsor): update default value for sponsor setting `SPONSOR_ICON_ANIM`               |
 | [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03) | feat(ui): add new setting `SPONSOR_HIDE_ICON` #72                                         |
 | [`9a1625b96`](https://github.com/Aetherinox/csf-firewall/commit/9a1625b96) | style(generic): update formatting                                                         |
 | [`78a50b947`](https://github.com/Aetherinox/csf-firewall/commit/78a50b947) | chore: add input value type to LF_MODSEC_PERM comments #59                                |
@@ -200,6 +201,7 @@ Files that exist only in the Aetherinox fork.
 
 | Setting                   | Description                   | Issue |
 | ------------------------- | ----------------------------- | ----- |
+| `SPONSOR_ICON_ANIM`       | Enable sponsor icon animation | -     |
 | `SPONSOR_HIDE_ICON`       | Hide sponsor icon in UI       | #72   |
 | `UI_LOGS_REFRESH_TIME`    | Log refresh interval          | #25   |
 | `UI_LOGS_START_PAUSED`    | Start with logs paused        | #25   |
@@ -219,6 +221,9 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 | Commit      | Description                                                                                |
 | ----------- | ------------------------------------------------------------------------------------------ |
+| [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) | fix(ui): force homepage buttons to have same width                                         |
+| [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) | fix(ui): proper formatting for each section in gui config editor                           |
+| [`8e720a86d`](https://github.com/Aetherinox/csf-firewall/commit/8e720a86d) | feat(sponsor): update default value for sponsor setting `SPONSOR_ICON_ANIM`                |
 | [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) | fix(ui): incorrectly adding gap between first and second line in web interface             |
 | [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) | fix(webmin): add webmin `settings` button to interface without breaking theme js           |
 | [`4bd6de54b`](https://github.com/Aetherinox/csf-firewall/commit/4bd6de54b) | fix(webmin): ensure each setting is properly formatted, pre-wrap descriptions              |
@@ -228,6 +233,9 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 **Key Changes:**
 
+- Homepage button width consistency
+- GUI config editor section formatting
+- Sponsor icon animation setting
 - Sponsor icon visibility controls
 - Webmin settings button integration
 - UI formatting fixes
@@ -458,6 +466,8 @@ Commit [`197e93acc`](https://github.com/Aetherinox/csf-firewall/commit/197e93acc
 
 | Fix                                | Commit      |
 | ---------------------------------- | ----------- |
+| Homepage buttons same width        | [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) |
+| GUI config editor formatting       | [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) |
 | TTY detection for clean CLI output | [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e) |
 | Color code sanitization for CWP    | [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7) |
 | UI gap in Firewall Configuration   | [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) |
@@ -766,6 +776,7 @@ All new configuration options added by the Aetherinox fork:
 | `UI_CSP_ENABLED`          | `"0"`   | Enable Content-Security-Policy headers           | -     |
 | `UI_CSP_ADVANCED_ENABLED` | `"0"`   | Enable custom CSP rules                          | -     |
 | `UI_CSP_ADVANCED_RULE`    | `""`    | Custom CSP rule with template variable support   | -     |
+| `SPONSOR_ICON_ANIM`       | `"0"`   | Enable sponsor icon animation                    | -     |
 | `SPONSOR_HIDE_ICON`       | `"0"`   | Hide sponsor icon in footer                      | #72   |
 | `SPONSOR_LICENSE`         | `""`    | License key (hides sponsor if set)               | -     |
 | `SPONSOR_RELEASE_INSIDERS`| `"0"`   | Enable Insiders release channel                  | -     |
@@ -803,7 +814,9 @@ UI commits:
 - [`21338f61b`](https://github.com/Aetherinox/csf-firewall/commit/21338f61b) - Login failure notification
 - [`2a061110e`](https://github.com/Aetherinox/csf-firewall/commit/2a061110e) - Sponsor button conditional display
 - [`185654edc`](https://github.com/Aetherinox/csf-firewall/commit/185654edc) - Remove heart animation
+- [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) - GUI config editor formatting fix
+- [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) - Homepage buttons width fix
 
 ---
 
-Last updated: 2025-12-19
+Last updated: 2025-12-20
