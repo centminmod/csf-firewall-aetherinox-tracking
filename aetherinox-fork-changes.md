@@ -779,6 +779,57 @@ print "<button id='btn-sponsor'...></button>"
 - Added URL detection to convert links to clickable `<a>` tags with `target="_blank"`
 - Applied `white-space: pre-wrap; font-family: monospace; line-height: 1.2em;` styling
 
+### Docker Integration Script Rewrite (Commit [`c9ea4af97`](https://github.com/Aetherinox/csf-firewall/commit/c9ea4af97))
+
+**File:** `extras/scripts/docker.sh`
+**Changes:** +1,692 / -960 lines (complete rewrite)
+**Purpose:** Whitelists Docker container IP addresses in CSF's allow list (`/etc/csf/csf.allow`)
+
+**Architectural Changes:**
+
+| Change           | Before          | After                              |
+| ---------------- | --------------- | ---------------------------------- |
+| Shell            | `#!/bin/bash`   | `#!/bin/sh` (POSIX compatible)     |
+| Package managers | apt-get only    | apt-get, dnf, yum (multi-distro)   |
+| Config syntax    | Bash arrays     | POSIX strings                      |
+
+**New Features:**
+
+1. **7-Level Logging System** - Color-coded severity output:
+   - `verbose()` - Purple badge for verbose messages
+   - `debug()` - Dark badge for debug (dev/dryrun only)
+   - `info()` - Blue badge for informational
+   - `ok()` - Green badge for success
+   - `warn()` - Orange badge for warnings
+   - `danger()` - Red badge for danger alerts
+   - `error()` - Red badge for fatal errors
+
+2. **Dryrun Mode** - `--dryrun` flag for safe testing without system changes
+
+3. **ASCII Box Formatting** - Professional output presentation:
+   - `prinb(title)` - Complete box around title
+   - `princ(title)` - Cropped box (left border only)
+   - `prinp(title, text)` - Multi-line paragraph box with word-wrap
+   - `prin0()` - Horizontal separator line
+
+4. **Multi-Distribution Support** - Package manager detection:
+
+   ```bash
+   if command -v apt-get >/dev/null 2>&1; then
+       apt-get install -y -qq iptables
+   elif command -v dnf >/dev/null 2>&1; then
+       dnf install -y iptables
+   elif command -v yum >/dev/null 2>&1; then
+       yum install -y iptables
+   fi
+   ```
+
+5. **Enhanced Validation** - `service_exists()` function checks both `/etc/init.d/` and PATH
+
+6. **Version Tracking** - App metadata with version 15.0.9
+
+**Backward Compatible:** Configuration variable names unchanged; only internal architecture modified
+
 ---
 
 ## Configuration Options Reference
