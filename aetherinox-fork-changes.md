@@ -6,10 +6,10 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 | Category          | Count |
 | ----------------- | ----- |
-| Modified files    | 164   |
+| Modified files    | 166   |
 | New files         | 31    |
 | Files removed     | 0     |
-| Total differences | 195   |
+| Total differences | 197   |
 
 **Fork Repository:** <https://github.com/Aetherinox/csf-firewall>
 
@@ -17,12 +17,12 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2025-12-20)
+## Repository State (as of 2025-12-25)
 
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
 | Official CSF    | [`4793f7c`](https://github.com/centminmod/configserver-scripts/commit/4793f7c)     | 2025-12-20 | update readme |
-| Aetherinox Fork | [`0ff3594d0`](https://github.com/Aetherinox/csf-firewall/commit/0ff3594d0)   | 2025-12-20 | Sync 12/20/2025 00:19 UTC                                                 |
+| Aetherinox Fork | [`4b23d0113`](https://github.com/Aetherinox/csf-firewall/commit/4b23d0113)   | 2025-12-25 | Sync 12/25/2025 12:13 UTC                                                 |
 
 ---
 
@@ -48,27 +48,27 @@ The Aetherinox fork maintains versioned releases. See [all releases](https://git
 
 | Metric            | Value      |
 | ----------------- | ---------- |
-| Lines added       | 58,556     |
-| Lines removed     | 26,788     |
-| Net change        | +31,768    |
-| Fork size         | 13,108 KB  |
-| Official size     | 2,910 KB   |
-| Size difference   | +10,198 KB |
+| Lines added       | 59,263     |
+| Lines removed     | 27,111     |
+| Net change        | +32,152    |
+| Fork size         | 13,115 KB  |
+| Official size     | 2,911 KB   |
+| Size difference   | +10,204 KB |
 
 ### Most Changed Files (by commit count)
 
-| Rank | File                              | Commits |
-| ---- | --------------------------------- | ------- |
-| 1    | `ConfigServer/Config.pm`          | 9       |
-| 2    | `ConfigServer/ServerCheck.pm`     | 9       |
-| 3    | `ConfigServer/RBLCheck.pm`        | 8       |
-| 4    | `ConfigServer/DisplayUI.pm`       | 7       |
-| 5    | `ConfigServer/DisplayResellerUI.pm` | 6     |
-| 6    | `ConfigServer/AbuseIP.pm`         | 5       |
-| 7    | `ConfigServer/CheckIP.pm`         | 5       |
-| 8    | `ConfigServer/CloudFlare.pm`      | 5       |
-| 9    | `ConfigServer/RegexMain.pm`       | 5       |
-| 10   | `ConfigServer/GetEthDev.pm`       | 4       |
+| Rank | File                                | Commits |
+| ---- | ----------------------------------- | ------- |
+| 1    | `ConfigServer/DisplayUI.pm`         | 18      |
+| 2    | `ConfigServer/Config.pm`            | 9       |
+| 3    | `ConfigServer/ServerCheck.pm`       | 9       |
+| 4    | `ConfigServer/RBLCheck.pm`          | 8       |
+| 5    | `ConfigServer/AbuseIP.pm`           | 6       |
+| 6    | `ConfigServer/DisplayResellerUI.pm` | 6       |
+| 7    | `ConfigServer/CheckIP.pm`           | 5       |
+| 8    | `ConfigServer/CloudFlare.pm`        | 5       |
+| 9    | `ConfigServer/RegexMain.pm`         | 5       |
+| 10   | `ConfigServer/GetEthDev.pm`         | 4       |
 
 ---
 
@@ -221,6 +221,13 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 | Commit      | Description                                                                                |
 | ----------- | ------------------------------------------------------------------------------------------ |
+| [`392cd4c13`](https://github.com/Aetherinox/csf-firewall/commit/392cd4c13) | fix(interworx): correct vertical scrollbar showing in iframe                              |
+| [`891e7ea6e`](https://github.com/Aetherinox/csf-firewall/commit/891e7ea6e) | fix(cyberpanel): correct issue with iframe showing small vertical scrollbar               |
+| [`79de7d801`](https://github.com/Aetherinox/csf-firewall/commit/79de7d801) | fix(cyberpanel): fix footer padding for cyberpanel                                         |
+| [`fbc461e26`](https://github.com/Aetherinox/csf-firewall/commit/fbc461e26) | feat(ui): add new class tag `value-restricted`, `value-disabled`                           |
+| [`726011daf`](https://github.com/Aetherinox/csf-firewall/commit/726011daf) | feat(cyberpanel): enable new footer with theme selector                                    |
+| [`ddfffaf1b`](https://github.com/Aetherinox/csf-firewall/commit/ddfffaf1b) | feat(cwp): enable new footer for `control web panel`                                       |
+| [`6c0df7e59`](https://github.com/Aetherinox/csf-firewall/commit/6c0df7e59) | feat(directadmin): enable new footer for `directadmin`                                     |
 | [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) | fix(ui): force homepage buttons to have same width                                         |
 | [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) | fix(ui): proper formatting for each section in gui config editor                           |
 | [`8e720a86d`](https://github.com/Aetherinox/csf-firewall/commit/8e720a86d) | feat(sponsor): update default value for sponsor setting `SPONSOR_ICON_ANIM`                |
@@ -237,6 +244,9 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 - GUI config editor section formatting
 - Sponsor icon animation setting
 - Sponsor icon visibility controls
+- New footer with theme selector for CyberPanel, CWP, DirectAdmin
+- CSS class tags: `value-restricted`, `value-disabled`
+- Iframe scrollbar fixes for InterWorx and CyberPanel
 - Webmin settings button integration
 - UI formatting fixes
 - Setting description formatting
@@ -419,10 +429,11 @@ Commit [`197e93acc`](https://github.com/Aetherinox/csf-firewall/commit/197e93acc
 
 ### Shell and C Files
 
-| File     | Changes              |
-| -------- | -------------------- |
-| `csf.sh` | Main shell wrapper   |
-| `csf.c`  | C language component |
+| File                      | Changes                                          |
+| ------------------------- | ------------------------------------------------ |
+| `csf.sh`                  | Main shell wrapper                               |
+| `csf.c`                   | C language component                             |
+| `extras/scripts/docker.sh`| Docker integration script rewrite (+1692/-960 lines) |
 
 ### Documentation
 
@@ -446,13 +457,17 @@ Commit [`197e93acc`](https://github.com/Aetherinox/csf-firewall/commit/197e93acc
 
 ### UI Enhancements
 
-| Feature                  | Description                   | Issue |
-| ------------------------ | ----------------------------- | ----- |
-| Theme selector           | Dark & light theme support    | -     |
-| Sponsor icon controls    | Hide/show sponsor icon        | #72   |
-| Log refresh settings     | Configurable refresh time     | #25   |
-| Login attempt display    | Show remaining login attempts | -     |
-| Settings button (Webmin) | Quick access to settings      | -     |
+| Feature                     | Description                            | Issue |
+| --------------------------- | -------------------------------------- | ----- |
+| Theme selector              | Dark & light theme support             | -     |
+| CyberPanel footer           | New footer with theme selector         | -     |
+| CWP footer                  | New footer for Control Web Panel       | -     |
+| DirectAdmin footer          | New footer for DirectAdmin             | -     |
+| CSS class tags              | `value-restricted`, `value-disabled`   | -     |
+| Sponsor icon controls       | Hide/show sponsor icon                 | #72   |
+| Log refresh settings        | Configurable refresh time              | #25   |
+| Login attempt display       | Show remaining login attempts          | -     |
+| Settings button (Webmin)    | Quick access to settings               | -     |
 
 ### Security Features
 
@@ -464,15 +479,18 @@ Commit [`197e93acc`](https://github.com/Aetherinox/csf-firewall/commit/197e93acc
 
 ### Bug Fixes
 
-| Fix                                | Commit      |
-| ---------------------------------- | ----------- |
-| Homepage buttons same width        | [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) |
-| GUI config editor formatting       | [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) |
-| TTY detection for clean CLI output | [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e) |
-| Color code sanitization for CWP    | [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7) |
-| UI gap in Firewall Configuration   | [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) |
-| Webmin settings button JS          | [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) |
-| DirectAdmin install error          | [`6e85c7a1b`](https://github.com/Aetherinox/csf-firewall/commit/6e85c7a1b) |
+| Fix                                      | Commit      |
+| ---------------------------------------- | ----------- |
+| InterWorx iframe vertical scrollbar      | [`392cd4c13`](https://github.com/Aetherinox/csf-firewall/commit/392cd4c13) |
+| CyberPanel iframe vertical scrollbar     | [`891e7ea6e`](https://github.com/Aetherinox/csf-firewall/commit/891e7ea6e) |
+| CyberPanel footer padding                | [`79de7d801`](https://github.com/Aetherinox/csf-firewall/commit/79de7d801) |
+| Homepage buttons same width              | [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) |
+| GUI config editor formatting             | [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) |
+| TTY detection for clean CLI output       | [`758e1180e`](https://github.com/Aetherinox/csf-firewall/commit/758e1180e) |
+| Color code sanitization for CWP          | [`c3c1127f7`](https://github.com/Aetherinox/csf-firewall/commit/c3c1127f7) |
+| UI gap in Firewall Configuration         | [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) |
+| Webmin settings button JS                | [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) |
+| DirectAdmin install error                | [`6e85c7a1b`](https://github.com/Aetherinox/csf-firewall/commit/6e85c7a1b) |
 
 ### New Integrations
 
@@ -797,6 +815,7 @@ Key feature commits:
 - [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03) - Sponsor hide icon setting - 8 files
 - [`7dbe65c90`](https://github.com/Aetherinox/csf-firewall/commit/7dbe65c90) - AbuseIPDB blocklist template - +16 lines
 - [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff) - AlmaLinux/Rocky10/RedHat support - 7 files
+- [`c9ea4af97`](https://github.com/Aetherinox/csf-firewall/commit/c9ea4af97) - Docker integration script rewrite - +1692/-960 lines
 
 Security commits:
 
@@ -808,6 +827,13 @@ Security commits:
 
 UI commits:
 
+- [`392cd4c13`](https://github.com/Aetherinox/csf-firewall/commit/392cd4c13) - InterWorx iframe scrollbar fix
+- [`891e7ea6e`](https://github.com/Aetherinox/csf-firewall/commit/891e7ea6e) - CyberPanel iframe scrollbar fix
+- [`79de7d801`](https://github.com/Aetherinox/csf-firewall/commit/79de7d801) - CyberPanel footer padding fix
+- [`fbc461e26`](https://github.com/Aetherinox/csf-firewall/commit/fbc461e26) - CSS class tags `value-restricted`, `value-disabled`
+- [`726011daf`](https://github.com/Aetherinox/csf-firewall/commit/726011daf) - CyberPanel footer with theme selector
+- [`ddfffaf1b`](https://github.com/Aetherinox/csf-firewall/commit/ddfffaf1b) - CWP new footer
+- [`6c0df7e59`](https://github.com/Aetherinox/csf-firewall/commit/6c0df7e59) - DirectAdmin new footer
 - [`365e582f3`](https://github.com/Aetherinox/csf-firewall/commit/365e582f3) - Comment formatting fix
 - [`69a1c24cf`](https://github.com/Aetherinox/csf-firewall/commit/69a1c24cf) - Webmin settings button
 - [`80dd350a2`](https://github.com/Aetherinox/csf-firewall/commit/80dd350a2) - Log refresh controls
@@ -819,4 +845,4 @@ UI commits:
 
 ---
 
-Last updated: 2025-12-20
+Last updated: 2025-12-25
