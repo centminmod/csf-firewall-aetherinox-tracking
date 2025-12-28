@@ -17,12 +17,12 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2025-12-25)
+## Repository State (as of 2025-12-27)
 
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
 | Official CSF    | [`4793f7c`](https://github.com/centminmod/configserver-scripts/commit/4793f7c)     | 2025-12-20 | update readme |
-| Aetherinox Fork | [`4b23d0113`](https://github.com/Aetherinox/csf-firewall/commit/4b23d0113)   | 2025-12-25 | Sync 12/25/2025 12:13 UTC                                                 |
+| Aetherinox Fork | [`78d9ee45a`](https://github.com/Aetherinox/csf-firewall/commit/78d9ee45a)   | 2025-12-27 | refactor(generic): update interface header                                |
 
 ---
 
@@ -167,11 +167,13 @@ Files that exist only in the Aetherinox fork.
 
 | Commit      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
+| [`78d9ee45a`](https://github.com/Aetherinox/csf-firewall/commit/78d9ee45a) | refactor(generic): update interface header                                               |
 | [`6a8d569b8`](https://github.com/Aetherinox/csf-firewall/commit/6a8d569b8) | feat(csf): add warning to console output when using default web ui username and password |
 
 **Key Changes:**
 
 - Security warning for default credentials
+- Interface header refactoring with structured HTML layout (header-left/header-right divs)
 
 ### csf.conf (Main Configuration)
 
@@ -830,6 +832,53 @@ print "<button id='btn-sponsor'...></button>"
 
 **Backward Compatible:** Configuration variable names unchanged; only internal architecture modified
 
+**Additional Enhancement (Commit [`2f4da658c`](https://github.com/Aetherinox/csf-firewall/commit/2f4da658c)):**
+- Added command-line flag handling (+249/-164 lines)
+- Extended argument parsing for runtime configuration
+
+### OpenVPN Integration Script Rewrite (Commit [`325ba3401`](https://github.com/Aetherinox/csf-firewall/commit/325ba3401))
+
+**File:** `extras/scripts/openvpn.sh`
+**Changes:** +1,219 / -243 lines (complete rewrite)
+**Purpose:** Configures CSF firewall rules to allow OpenVPN server traffic
+
+**Architectural Changes:**
+
+| Change           | Before          | After                              |
+| ---------------- | --------------- | ---------------------------------- |
+| Shell            | `#!/bin/bash`   | `#!/bin/sh` (POSIX compatible)     |
+| Package managers | apt-get only    | apt-get, dnf, yum (multi-distro)   |
+| Config syntax    | Bash arrays     | POSIX strings                      |
+
+**New Features:**
+
+1. **7-Level Logging System** - Color-coded severity output (same as Docker script):
+   - `verbose()` - Purple badge for verbose messages
+   - `debug()` - Dark badge for debug (dev/dryrun only)
+   - `info()` - Blue badge for informational
+   - `ok()` - Green badge for success
+   - `warn()` - Orange badge for warnings
+   - `danger()` - Red badge for danger alerts
+   - `error()` - Red badge for fatal errors
+
+2. **Dryrun Mode** - `--dryrun` flag for safe testing without system changes
+
+3. **Verbose Mode** - `--verbose` flag for detailed output
+
+4. **Version Tracking** - App metadata with version 15.0.9
+
+5. **Improved Configuration Variables:**
+   - `ETH_ADAPTER` - Auto-detected or user-specified ethernet adapter
+   - `IP_PUBLIC` - Auto-detected or user-specified public IP
+   - `TUN_ADAPTER` - OpenVPN tunnel adapter (usually tun0)
+   - `IP_POOL_LIST` - Space-separated list of VPN subnets
+
+6. **Usage Modes:**
+   - Automatic: Place in `/usr/local/include/csf/post.d/openvpn.sh`
+   - Manual: `chmod +x openvpn.sh && sudo ./openvpn.sh`
+
+**Backward Compatible:** Configuration variable names preserved; internal architecture modernized
+
 ---
 
 ## Configuration Options Reference
@@ -867,6 +916,8 @@ Key feature commits:
 - [`7dbe65c90`](https://github.com/Aetherinox/csf-firewall/commit/7dbe65c90) - AbuseIPDB blocklist template - +16 lines
 - [`38c4f2aff`](https://github.com/Aetherinox/csf-firewall/commit/38c4f2aff) - AlmaLinux/Rocky10/RedHat support - 7 files
 - [`c9ea4af97`](https://github.com/Aetherinox/csf-firewall/commit/c9ea4af97) - Docker integration script rewrite - +1692/-960 lines
+- [`2f4da658c`](https://github.com/Aetherinox/csf-firewall/commit/2f4da658c) - Docker command flags enhancement - +249/-164 lines
+- [`325ba3401`](https://github.com/Aetherinox/csf-firewall/commit/325ba3401) - OpenVPN integration script rewrite - +1219/-243 lines
 
 Security commits:
 
@@ -893,7 +944,8 @@ UI commits:
 - [`185654edc`](https://github.com/Aetherinox/csf-firewall/commit/185654edc) - Remove heart animation
 - [`94a8ced95`](https://github.com/Aetherinox/csf-firewall/commit/94a8ced95) - GUI config editor formatting fix
 - [`5836f9d46`](https://github.com/Aetherinox/csf-firewall/commit/5836f9d46) - Homepage buttons width fix
+- [`78d9ee45a`](https://github.com/Aetherinox/csf-firewall/commit/78d9ee45a) - Interface header refactoring (lfd.pl)
 
 ---
 
-Last updated: 2025-12-25
+Last updated: 2025-12-27
