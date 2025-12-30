@@ -17,12 +17,12 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2025-12-27)
+## Repository State (as of 2025-12-30)
 
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
 | Official CSF    | [`4793f7c`](https://github.com/centminmod/configserver-scripts/commit/4793f7c)     | 2025-12-20 | update readme |
-| Aetherinox Fork | [`78d9ee45a`](https://github.com/Aetherinox/csf-firewall/commit/78d9ee45a)   | 2025-12-27 | refactor(generic): update interface header                                |
+| Aetherinox Fork | [`d8a9a3d6a`](https://github.com/Aetherinox/csf-firewall/commit/d8a9a3d6a)   | 2025-12-30 | Sync 12/30/2025 00:21 UTC                                                 |
 
 ---
 
@@ -948,4 +948,4 @@ UI commits:
 
 ---
 
-Last updated: 2025-12-27
+Last updated: 2025-12-30
