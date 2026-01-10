@@ -17,12 +17,12 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2025-12-30)
+## Repository State (as of 2026-01-10)
 
 | Repository      | HEAD Commit   | Date       | Message                                                                   |
 | --------------- | ------------- | ---------- | ------------------------------------------------------------------------- |
 | Official CSF    | [`4793f7c`](https://github.com/centminmod/configserver-scripts/commit/4793f7c)     | 2025-12-20 | update readme |
-| Aetherinox Fork | [`d8a9a3d6a`](https://github.com/Aetherinox/csf-firewall/commit/d8a9a3d6a)   | 2025-12-30 | Sync 12/30/2025 00:21 UTC                                                 |
+| Aetherinox Fork | [`e11228eed`](https://github.com/Aetherinox/csf-firewall/commit/e11228eed)   | 2026-01-10 | Sync 01/10/2026 00:21 UTC                                                 |
 
 ---
 
@@ -48,12 +48,12 @@ The Aetherinox fork maintains versioned releases. See [all releases](https://git
 
 | Metric            | Value      |
 | ----------------- | ---------- |
-| Lines added       | 59,263     |
-| Lines removed     | 27,111     |
-| Net change        | +32,152    |
-| Fork size         | 13,115 KB  |
+| Lines added       | 59,401     |
+| Lines removed     | 27,113     |
+| Net change        | +32,288    |
+| Fork size         | 13,120 KB  |
 | Official size     | 2,911 KB   |
-| Size difference   | +10,204 KB |
+| Size difference   | +10,209 KB |
 
 ### Most Changed Files (by commit count)
 
@@ -439,11 +439,11 @@ Commit [`197e93acc`](https://github.com/Aetherinox/csf-firewall/commit/197e93acc
 
 ### Documentation
 
-| File            | Changes           |
-| --------------- | ----------------- |
-| `changelog.txt` | Updated changelog |
-| `csf.1.txt`     | Man page updates  |
-| `csf.help`      | Help text updates |
+| File            | Changes                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| `changelog.txt` | Updated changelog; 15.09 release notes added ([`ece67acb8`](https://github.com/Aetherinox/csf-firewall/commit/ece67acb8)) |
+| `csf.1.txt`     | Man page updates                                                                                           |
+| `csf.help`      | Help text updates                                                                                          |
 
 ---
 
@@ -948,4 +948,4 @@ UI commits:
 
 ---
 
-Last updated: 2025-12-30
+Last updated: 2026-01-10
