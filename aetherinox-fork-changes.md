@@ -68,18 +68,21 @@ Note: size figures sum only the modified and new files compared between trees
 
 ### Most Changed Files (by commit count)
 
-| Rank | File                                | Commits |
-| ---- | ----------------------------------- | ------- |
-| 1    | `ConfigServer/DisplayUI.pm`         | 54      |
-| 2    | `ConfigServer/ServerCheck.pm`       | 19      |
-| 3    | `ConfigServer/Config.pm`            | 15      |
-| 4    | `ConfigServer/RBLCheck.pm`          | 13      |
-| 5    | `ConfigServer/RegexMain.pm`         | 9       |
-| 6    | `ConfigServer/DisplayResellerUI.pm` | 8       |
-| 7    | `ConfigServer/Messenger.pm`         | 8       |
-| 8    | `ConfigServer/Sanity.pm`            | 8       |
-| 9    | `ConfigServer/AbuseIP.pm`           | 7       |
-| 10   | `ConfigServer/CheckIP.pm`           | 6       |
+Ranking covers all 168 modified files (commit counts via `git log --follow` in the
+fork repository; earlier revisions of this table only ranked a 20-file subset).
+
+| Rank | File                                  | Commits |
+| ---- | ------------------------------------- | ------- |
+| 1    | `ConfigServer/DisplayUI.pm`           | 54      |
+| 2    | `csf/configserver.css`                | 40      |
+| 3    | `da/images/configserver.css`          | 33      |
+| 4    | `interworx/images/configserver.css`   | 33      |
+| 5    | `ui/images/configserver.css`          | 33      |
+| 6    | `webmin/csf/images/configserver.css`  | 32      |
+| 7    | `csf.conf`                            | 29      |
+| 8    | `csf.cwp.conf`                        | 28      |
+| 9    | `csf.cyberpanel.conf`                 | 28      |
+| 10   | `csf.directadmin.conf`                | 28      |
 
 ---
 
