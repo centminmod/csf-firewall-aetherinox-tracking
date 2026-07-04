@@ -17,7 +17,7 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2026-01-30)
+## Repository State (as of 2026-07-05)
 
 | Repository | HEAD Commit | Date | Message |
 |------------|-------------|------|---------|
@@ -51,9 +51,12 @@ The Aetherinox fork maintains versioned releases. See [all releases](https://git
 | Lines added       | 59,242     |
 | Lines removed     | 27,118     |
 | Net change        | +32,124    |
-| Fork size         | 13,120 KB  |
-| Official size     | 2,911 KB   |
-| Size difference   | +10,209 KB |
+| Fork size (differing files only) | 13,116 KB  |
+| Official size (differing files only) | 2,911 KB   |
+| Size difference   | +10,205 KB |
+
+Note: size figures sum only the modified and new files compared between trees
+(full-tree byte totals are ~18,778 KB fork vs ~8,573 KB official).
 
 ### Most Changed Files (by commit count)
 
@@ -204,7 +207,7 @@ Files that exist only in the Aetherinox fork.
 | Setting                   | Description                   | Issue |
 | ------------------------- | ----------------------------- | ----- |
 | `SPONSOR_ICON_ANIM`       | Enable sponsor icon animation | -     |
-| `SPONSOR_HIDE_ICON`       | Hide sponsor icon in UI       | #72   |
+| `SPONSOR_ICON_HIDE`       | Hide sponsor icon in UI (added as `SPONSOR_HIDE_ICON` in [`f8f7f0d03`](https://github.com/Aetherinox/csf-firewall/commit/f8f7f0d03), renamed in [`8e720a86d`](https://github.com/Aetherinox/csf-firewall/commit/8e720a86d)) | #72   |
 | `UI_LOGS_REFRESH_TIME`    | Log refresh interval          | #25   |
 | `UI_LOGS_START_PAUSED`    | Start with logs paused        | #25   |
 | `UI_RETRY_SHOW_REMAINING` | Show remaining login attempts | -     |
@@ -759,15 +762,15 @@ CSF_WEBMIN_LIBEXEC_HOME="/usr/libexec/webmin"  # AlmaLinux, RedHat, Rocky 10
 
 **Configuration Options:**
 
-- `SPONSOR_HIDE_ICON = "0"` - Hide sponsor icon in footer
+- `SPONSOR_ICON_HIDE = "0"` - Hide sponsor icon in footer (added as `SPONSOR_HIDE_ICON`, renamed in [`8e720a86d`](https://github.com/Aetherinox/csf-firewall/commit/8e720a86d))
 - `SPONSOR_LICENSE` - If set, sponsor button hidden automatically
 
-**DisplayUI.pm Logic:**
+**DisplayUI.pm Logic (current):**
 
 ```perl
 print "<button id='btn-sponsor'...></button>"
     if !length( $config{SPONSOR_LICENSE} // '' )
-    && ( ( $config{UI_SPONSOR_HIDE} // '' ) ne '1' );
+    && ( ( $config{SPONSOR_ICON_HIDE} // '' ) ne '1' );
 ```
 
 **Additional Change:** Removed beating heart animation from sponsor icon (class `heart` removed from CSS).
@@ -845,6 +848,7 @@ print "<button id='btn-sponsor'...></button>"
 **Backward Compatible:** Configuration variable names unchanged; only internal architecture modified
 
 **Additional Enhancement (Commit [`2f4da658c`](https://github.com/Aetherinox/csf-firewall/commit/2f4da658c)):**
+
 - Added command-line flag handling (+249/-164 lines)
 - Extended argument parsing for runtime configuration
 
@@ -927,9 +931,9 @@ All new configuration options added by the Aetherinox fork:
 | `UI_BLOCK_PRIVATE_NET`    | `"1"`   | Block login from private network ranges          | -     |
 | `UI_CSP_ENABLED`          | `"0"`   | Enable Content-Security-Policy headers           | -     |
 | `UI_CSP_ADVANCED_ENABLED` | `"0"`   | Enable custom CSP rules                          | -     |
-| `UI_CSP_ADVANCED_RULE`    | `""`    | Custom CSP rule with template variable support   | -     |
+| `UI_CSP_ADVANCED_RULE`    | (default CSP string) | Custom CSP rule with template variable support; defaults to the full CSP directive string shown in the CSP analysis section | -     |
 | `SPONSOR_ICON_ANIM`       | `"0"`   | Enable sponsor icon animation                    | -     |
-| `SPONSOR_HIDE_ICON`       | `"0"`   | Hide sponsor icon in footer                      | #72   |
+| `SPONSOR_ICON_HIDE`       | `"0"`   | Hide sponsor icon in footer (renamed from `SPONSOR_HIDE_ICON`) | #72   |
 | `SPONSOR_LICENSE`         | `""`    | License key (hides sponsor if set)               | -     |
 | `SPONSOR_RELEASE_INSIDERS`| `"0"`   | Enable Insiders release channel                  | -     |
 
@@ -990,4 +994,4 @@ Refactoring commits:
 
 ---
 
-Last updated: 2026-01-30
+Last updated: 2026-07-05
