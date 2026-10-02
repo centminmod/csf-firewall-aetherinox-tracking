@@ -6,10 +6,10 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 | Category          | Count |
 | ----------------- | ----- |
-| Modified files    | 168   |
-| New files         | 46    |
+| Modified files    | 171   |
+| New files         | 48    |
 | Files removed     | 0     |
-| Total differences | 214   |
+| Total differences | 219   |
 
 **Fork Repository:** <https://github.com/Aetherinox/csf-firewall>
 
@@ -17,12 +17,16 @@ This document tracks all changes between the official CSF Firewall v15.00 (GPLv3
 
 ---
 
-## Repository State (as of 2026-07-05)
+## Repository State (as of 2026-10-02)
 
 | Repository | HEAD Commit | Date | Message |
 |------------|-------------|------|---------|
 | Official CSF | [`4793f7c`](https://github.com/centminmod/configserver-scripts/commit/4793f7c) | 2025-12-20 | update readme |
-| Aetherinox Fork | [`da3f5c13e`](https://github.com/Aetherinox/csf-firewall/commit/da3f5c13e) | 2026-06-16 | refactor(lfd): implement better logging |
+| Aetherinox Fork | [`0fcf47be1`](https://github.com/Aetherinox/csf-firewall/commit/0fcf47be1) | 2026-09-27 | feat(debug): add new module |
+
+**Tracking source (2026-10):** fork HEAD is taken from `Aetherinox/csf-firewall`
+(`upstream/main`) directly. The `centminmod/csf-firewall-aetherinox` mirror was still
+at `da3f5c13e` on 2026-10-02, 48 commits behind upstream.
 
 **History rewrite (2026-02):** the fork rewrote its git history around February 2026;
 every rewritten commit carries a `Former-commit-id:` trailer pointing at its
@@ -56,37 +60,37 @@ The Aetherinox fork maintains versioned releases. See [all releases](https://git
 
 | Metric            | Value      |
 | ----------------- | ---------- |
-| Lines added       | 84,072     |
-| Lines removed     | 33,448     |
-| Net change        | +50,624    |
-| Fork size (differing files only) | 13,532 KB  |
-| Official size (differing files only) | 2,917 KB   |
-| Size difference   | +10,616 KB |
+| Lines added       | 89,251     |
+| Lines removed     | 34,483     |
+| Net change        | +54,768    |
+| Fork size (differing files only) | 13,684 KB  |
+| Official size (differing files only) | 2,962 KB   |
+| Size difference   | +10,722 KB |
 
 Note: size figures sum only the modified and new files compared between trees
-(full-tree byte totals are ~19,189 KB fork vs ~8,573 KB official).
+(full-tree byte totals are ~19,295 KB fork vs ~8,573 KB official).
 
 ### Most Changed Files (by commit count)
 
-Ranking covers all 168 modified files (commit counts via `git log --follow` in the
-fork repository; earlier revisions of this table only ranked a 20-file subset).
+Ranking covers all 171 modified files (commit counts via `git log --follow` in the
+fork repository). Ties are listed alphabetically.
 
 | Rank | File                                  | Commits |
 | ---- | ------------------------------------- | ------- |
-| 1    | `ConfigServer/DisplayUI.pm`           | 54      |
-| 2    | `csf/configserver.css`                | 40      |
-| 3    | `da/images/configserver.css`          | 33      |
-| 4    | `interworx/images/configserver.css`   | 33      |
-| 5    | `ui/images/configserver.css`          | 33      |
-| 6    | `webmin/csf/images/configserver.css`  | 32      |
-| 7    | `csf.conf`                            | 29      |
-| 8    | `csf.cwp.conf`                        | 28      |
-| 9    | `csf.cyberpanel.conf`                 | 28      |
-| 10   | `csf.directadmin.conf`                | 28      |
+| 1    | `ConfigServer/DisplayUI.pm`           | 56      |
+| 2    | `csf.conf`                            | 41      |
+| 3    | `csf.cwp.conf`                        | 40      |
+| 4    | `csf.cyberpanel.conf`                 | 40      |
+| 5    | `csf.directadmin.conf`                | 40      |
+| 6    | `csf.generic.conf`                    | 40      |
+| 7    | `csf.interworx.conf`                  | 40      |
+| 8    | `csf.vesta.conf`                      | 40      |
+| 9    | `csf/configserver.css`                | 40      |
+| 10   | `da/images/configserver.css`          | 33      |
 
 ---
 
-## New Files (46 files)
+## New Files (48 files)
 
 Files that exist only in the Aetherinox fork.
 
@@ -98,6 +102,8 @@ Files that exist only in the Aetherinox fork.
 | `csf-firewall-aetherinox/src/ConfigServer/Packages.pm` | Package/dependency handling module | [`858da7be3`](https://github.com/Aetherinox/csf-firewall/commit/858da7be3) |
 | `csf-firewall-aetherinox/src/ConfigServer/Perl/URI.pm` | Bundled `URI::Escape` (drops external module requirement) | [`417a7e91a`](https://github.com/Aetherinox/csf-firewall/commit/417a7e91a) |
 | `csf-firewall-aetherinox/src/ConfigServer/Sanitize.pm` | Output sanitization helpers (`html_escape`, `strip_ansi`) | [`7a8a80e6b`](https://github.com/Aetherinox/csf-firewall/commit/7a8a80e6b) |
+| `csf-firewall-aetherinox/src/ConfigServer/Debug.pm` | Leveled debug helper: `log()` writes to stderr, `getopts()`/`dump()` format text; level from `ENV{DEBUG}` (0-5); not yet imported by any module | [`0fcf47be1`](https://github.com/Aetherinox/csf-firewall/commit/0fcf47be1) |
+| `csf-firewall-aetherinox/src/ConfigServer/Secrets.pm` | Staged stub for secret redaction (package + `use` lines only, no subs yet); lazily required by `Debug.pm` | [`e789a9d76`](https://github.com/Aetherinox/csf-firewall/commit/e789a9d76) |
 
 ### Dark Theme Sprite Assets (10 files)
 
@@ -159,7 +165,7 @@ platform image directories (`csf/`, `da/images/`, `interworx/images/`, `ui/image
 | File | Description | Initial Commit |
 |------|-------------|----------------|
 | `csf-firewall-aetherinox/src/regex.txt` | Custom regex patterns | [`62743b25d`](https://github.com/Aetherinox/csf-firewall/commit/62743b25d) |
-| `csf-firewall-aetherinox/src/defaults.txt` | Default values reference consumed by `ConfigServer::Config` | [`51f365ddb`](https://github.com/Aetherinox/csf-firewall/commit/51f365ddb) |
+| `csf-firewall-aetherinox/src/defaults.txt` | Default values reference, read only by `ConfigServer::Config::getdefault()` (no callers yet; not merged into `loadconfig()`) | [`51f365ddb`](https://github.com/Aetherinox/csf-firewall/commit/51f365ddb) |
 | `csf-firewall-aetherinox/src/ui/ssl-expired/server.crt` | Expired SSL cert (testing) | [`cd4a42bc4`](https://github.com/Aetherinox/csf-firewall/commit/cd4a42bc4) |
 | `csf-firewall-aetherinox/src/ui/ssl-expired/server.key` | Expired SSL key (testing) | [`cd4a42bc4`](https://github.com/Aetherinox/csf-firewall/commit/cd4a42bc4) |
 
@@ -203,6 +209,9 @@ platform image directories (`csf/`, `da/images/`, `interworx/images/`, `ui/image
 
 | Commit      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
+| [`a23ffc8cf`](https://github.com/Aetherinox/csf-firewall/commit/a23ffc8cf) | feat(lfd): add option `LFD_PROCESS_BIND` to restrict PID ownership checks to parent process |
+| [`c57aa3a2f`](https://github.com/Aetherinox/csf-firewall/commit/c57aa3a2f) | fix(syntax): lfd startup syntax error                                                    |
+| [`a94ca865a`](https://github.com/Aetherinox/csf-firewall/commit/a94ca865a) | chore(cfg): update `LF_INTEGRITY` minimum threshold to 120s                              |
 | [`43ce1c956`](https://github.com/Aetherinox/csf-firewall/commit/43ce1c956) | refactor(generic): update interface header                                               |
 | [`ac61b07ca`](https://github.com/Aetherinox/csf-firewall/commit/ac61b07ca) | feat(csf): add warning to console output when using default web ui username and password |
 
@@ -210,6 +219,12 @@ platform image directories (`csf/`, `da/images/`, `interworx/images/`, `ui/image
 
 - Security warning for default credentials
 - Interface header refactoring with structured HTML layout (header-left/header-right divs)
+- New `LFD_PROCESS_BIND` option: when `1`, only the master lfd process checks the PID
+  file and performs a full shutdown; child processes log and exit individually
+- `c57aa3a2f` fixes a stray `s` line that made `lfd.pl` at `da3f5c13e` fail to compile
+  ("Substitution pattern not terminated"), adds missing semicolons and reformats `sub portscans`
+- `LF_INTEGRITY` floor moved into `$MIN_INTEGRITY_INTERVAL = 120` (values below 120
+  still revert to 300, as in official)
 
 ### csf.conf (Main Configuration)
 
@@ -219,6 +234,18 @@ platform image directories (`csf/`, `da/images/`, `interworx/images/`, `ui/image
 
 | Commit      | Description                                                                               |
 | ----------- | ----------------------------------------------------------------------------------------- |
+| [`bb5235f48`](https://github.com/Aetherinox/csf-firewall/commit/bb5235f48) | chore(csf): update default settings and descriptions                                      |
+| [`5d4d9cd6d`](https://github.com/Aetherinox/csf-firewall/commit/5d4d9cd6d) | chore(cfg): update `MESSENGER` config notes                                               |
+| [`a23ffc8cf`](https://github.com/Aetherinox/csf-firewall/commit/a23ffc8cf) | feat(lfd): add option `LFD_PROCESS_BIND` to restrict PID ownership checks to parent process |
+| [`a95b63d62`](https://github.com/Aetherinox/csf-firewall/commit/a95b63d62) | chore(cfg): update `LOGSCANNER` with globs warning                                        |
+| [`a94ca865a`](https://github.com/Aetherinox/csf-firewall/commit/a94ca865a) | chore(cfg): update `LF_INTEGRITY` minimum threshold to 120s                               |
+| [`4f680e295`](https://github.com/Aetherinox/csf-firewall/commit/4f680e295) | chore(cfg): update setting `LF_DIRWATCH`                                                  |
+| [`e4e1f4237`](https://github.com/Aetherinox/csf-firewall/commit/e4e1f4237) | chore(cfg): update setting `LF_EXPLOIT`                                                   |
+| [`c9336994a`](https://github.com/Aetherinox/csf-firewall/commit/c9336994a) | chore(cfg): update setting `CC_LOOKUPS`                                                   |
+| [`3aabe3966`](https://github.com/Aetherinox/csf-firewall/commit/3aabe3966) | chore(cfg): update setting `CC_IGNORE`                                                    |
+| [`dd5b5d777`](https://github.com/Aetherinox/csf-firewall/commit/dd5b5d777) | chore(cfg): update setting `PT_LIMIT`                                                     |
+| [`d2b6358d0`](https://github.com/Aetherinox/csf-firewall/commit/d2b6358d0) | chore(cfg): separate setting `GLOBAL_*` with proper description                           |
+| [`7bd25d444`](https://github.com/Aetherinox/csf-firewall/commit/7bd25d444) | chore(cfg): separate setting `LF_GLOBAL` with proper description                          |
 | [`0fa1f0428`](https://github.com/Aetherinox/csf-firewall/commit/0fa1f0428) | feat(sponsor): update default value for sponsor setting `SPONSOR_ICON_ANIM`               |
 | [`bd625f7f9`](https://github.com/Aetherinox/csf-firewall/commit/bd625f7f9) | feat(ui): add new setting `SPONSOR_HIDE_ICON` #72                                         |
 | [`30c34c9ad`](https://github.com/Aetherinox/csf-firewall/commit/30c34c9ad) | style(generic): update formatting                                                         |
@@ -245,8 +272,13 @@ platform image directories (`csf/`, `da/images/`, `interworx/images/`, `ui/image
 | `UI_LOGS_START_PAUSED`    | Start with logs paused        | #25   |
 | `UI_RETRY_SHOW_REMAINING` | Show remaining login attempts | -     |
 | `UI_BLOCK_PRIVATE_NET`    | Block private network ranges  | -     |
-| `UI_LOGS_REFRESH`         | Log refresh toggle            | -     |
 | `UI_WEBMIN_SHOW_BUTTON_CONFIG` | Show config button in Webmin module ([`a51a077ab`](https://github.com/Aetherinox/csf-firewall/commit/a51a077ab)) | -     |
+| `LFD_PROCESS_BIND`        | Restrict PID-file checks and full shutdown to the lfd parent process ([`a23ffc8cf`](https://github.com/Aetherinox/csf-firewall/commit/a23ffc8cf)) | -     |
+
+The 2026-08/09 `chore(cfg)` commits only rewrite comments and descriptions
+(`LF_GLOBAL`, `GLOBAL_*`, `PT_LIMIT`, `CC_IGNORE`, `CC_LOOKUPS`, `LF_EXPLOIT`,
+`LF_DIRWATCH`, `LF_INTEGRITY`, `LOGSCANNER`, `MESSENGER*`); no existing default value
+changed.
 
 ---
 
@@ -260,6 +292,7 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 | Commit      | Description                                                                                |
 | ----------- | ------------------------------------------------------------------------------------------ |
+| [`f379f0b63`](https://github.com/Aetherinox/csf-firewall/commit/f379f0b63) | Fix(#123): stray apostrophe in `<b>` tag generates invalid HTML                            |
 | [`edece43f6`](https://github.com/Aetherinox/csf-firewall/commit/edece43f6) | fix(ui): harden sponsor functionality, eliminate client-side trust                         |
 | [`d85665f70`](https://github.com/Aetherinox/csf-firewall/commit/d85665f70) | fix(ui): sanitize UI, use `textContent` instead of `innerHTML`                             |
 | [`c95f9ae80`](https://github.com/Aetherinox/csf-firewall/commit/c95f9ae80) | chore(ui): remove external dependency                                                      |
@@ -295,10 +328,115 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 - Setting description formatting
 - Hardened sponsor functionality (eliminate client-side trust)
 - UI sanitization (use `textContent` over `innerHTML`)
+- Config editor select line: `<b'>$start</b>` corrected to `<b>$start</b>` (#123)
 
 ### DisplayResellerUI.pm
 
 **Changes:** Reseller UI modifications paralleling DisplayUI.pm changes
+
+### URLGet.pm (HTTP Fetch Hardening, 2026-08)
+
+**Commit History:**
+
+| Commit      | Description                                                                              |
+| ----------- | ---------------------------------------------------------------------------------------- |
+| [`975fad924`](https://github.com/Aetherinox/csf-firewall/commit/975fad924) | refactor(urlget): rename URLGet method and timeout variables                             |
+| [`049834e94`](https://github.com/Aetherinox/csf-firewall/commit/049834e94) | chore(urlget): limit max url length passed to urlget package                             |
+| [`b0e295a28`](https://github.com/Aetherinox/csf-firewall/commit/b0e295a28) | fix(urlget): reject control chars; block crlf/nul injection                              |
+| [`bfe81e5e4`](https://github.com/Aetherinox/csf-firewall/commit/bfe81e5e4) | fix(urlget): use `cmd_label` instead of hard string label for utilities                  |
+| [`edb5bd01f`](https://github.com/Aetherinox/csf-firewall/commit/edb5bd01f) | fix(urlget): prevent command injection in curl/wget fallback; build argv instead of shell string |
+| [`1d23805ce`](https://github.com/Aetherinox/csf-firewall/commit/1d23805ce) | fix(urlget): correct completed request logging order                                     |
+| [`0ac5932f8`](https://github.com/Aetherinox/csf-firewall/commit/0ac5932f8) | fix(urlget): redact sensitive parameters from requests                                   |
+| [`57b210322`](https://github.com/Aetherinox/csf-firewall/commit/57b210322) | fix(urlget): remove duplicate request                                                    |
+
+**Key Changes:**
+
+- curl/wget fallback (`_method_curlwget`) now runs an argv list through `open3`
+  instead of a `/bin/sh` command string, which removes shell command injection
+- `urlget()` rejects control characters (CR/LF/NUL), non-`http(s)://` schemes and
+  URLs longer than 2,048 characters (`$GET_URL_LEN_MAX`)
+- New `_url_sanitize()` redacts `key`, `license`, `token`, `password` and similar
+  query values in debug logs and returned error strings
+- Every `urlget()` call previously issued the request twice; the duplicate is removed
+- Timeouts moved into `$GET_TIMEOUT_CONNECT` (300s) and `$GET_TIMEOUT_ALARM` (600s);
+  HTTP::Tiny alarm drops from 1200s to 600s, LWP alarm rises from 300s to 600s and the
+  LWP client timeout from 30s to 300s
+- Redaction gap: the `DEBUG` log line in `_with_alarm_timeout` still prints the raw `$err`
+  (the returned error string is sanitized)
+
+### Messenger.pm (2026-08 to 2026-09)
+
+**Commit History:**
+
+| Commit      | Description                                                                              |
+| ----------- | ---------------------------------------------------------------------------------------- |
+| [`8464e0081`](https://github.com/Aetherinox/csf-firewall/commit/8464e0081) | chore: push pending commits (Messenger.pm reformat, extra debug logging)                 |
+| [`0b9509a82`](https://github.com/Aetherinox/csf-firewall/commit/0b9509a82) | chore(messenger): define packages                                                        |
+| [`33682f541`](https://github.com/Aetherinox/csf-firewall/commit/33682f541) | fix(messenger): original code parentheses bug                                            |
+| [`7946ea17e`](https://github.com/Aetherinox/csf-firewall/commit/7946ea17e) | refactor(messenger): housekeeping                                                        |
+| [`f13f3aa96`](https://github.com/Aetherinox/csf-firewall/commit/f13f3aa96) | fix(messenger): write recaptcha.php with `0600` permissions                              |
+| [`f9168fa9e`](https://github.com/Aetherinox/csf-firewall/commit/f9168fa9e) | fix(messenger): prevent running with root uid/gid                                        |
+
+**Key Changes:**
+
+- `messenger()`, `messengerv2()` and `messengerv3()` all refuse to run when
+  `MESSENGER_USER` resolves to uid/gid 0 or is invalid (official v2/v3 had no check)
+- `recaptcha.php` (holds the reCAPTCHA secret) is written with mode `600` instead of `644`
+- `scalar(keys %sslcerts < 1)` rewritten as `!keys %sslcerts` in v1 (equivalent in Perl, since
+  `keys` binds tighter than `<`; v2/v3 keep the old form); the error now names
+  `MESSENGER_HTTPS_CONF`
+- Added `PACKAGE_NAME` / `SUB_MESSENGER_V*` constants and `DEBUG`-gated logging
+
+### CheckIP.pm
+
+**Commit History:**
+
+| Commit      | Description                                                                              |
+| ----------- | ---------------------------------------------------------------------------------------- |
+| [`378f639f1`](https://github.com/Aetherinox/csf-firewall/commit/378f639f1) | feat: add updated checkip module                                                         |
+| [`03e635d44`](https://github.com/Aetherinox/csf-firewall/commit/03e635d44) | fix(checkip): reject IPv4 and IPv6 /0 CIDR prefixes                                      |
+
+**Key Changes:**
+
+- `checkip()` / `cccheckip()` used `if ($cidr)`, so a `/0` prefix (string `"0"` is
+  false in Perl) skipped the range check and was accepted; now `/0` is rejected for
+  IPv4 and IPv6
+- IPv6 loopback test changed from numeric `$ip == 1` to string `$ip eq "1"`, so stripped
+  addresses that merely start with `1` are no longer treated as loopback
+- Module reformatted, `$VERSION` 1.03 → 15.11, new non-exported `tests_checkip()`
+  self-test helper; exported API (`checkip`, `cccheckip`) unchanged
+
+### Logger.pm, Config.pm, GetIPs.pm, Sendmail.pm (2026-08 to 2026-09)
+
+**Commit History:**
+
+| Commit      | Description                                                                              |
+| ----------- | ---------------------------------------------------------------------------------------- |
+| [`2c6192684`](https://github.com/Aetherinox/csf-firewall/commit/2c6192684) | fix(logger): detect globally executed code not specifically in subroutine                |
+| [`88b12088e`](https://github.com/Aetherinox/csf-firewall/commit/88b12088e) | feat(logger): add calling sub name                                                       |
+| [`389ec3588`](https://github.com/Aetherinox/csf-firewall/commit/389ec3588) | chore(sendmail): full sendmail message migrated to `DEBUG:2`                             |
+| [`beac44664`](https://github.com/Aetherinox/csf-firewall/commit/beac44664) | chore: housekeeping (`Config.pm` `$VERSION` 15.11, comment fixes)                        |
+| [`822c39413`](https://github.com/Aetherinox/csf-firewall/commit/822c39413) | style(config): update whitespace formatting                                              |
+| [`3c061d50f`](https://github.com/Aetherinox/csf-firewall/commit/3c061d50f) | feat(config): add sub `getsingle`                                                        |
+| [`b3f100e22`](https://github.com/Aetherinox/csf-firewall/commit/b3f100e22) | refactor(logger): modernize logging, add lazy config loading                             |
+| [`560c20ba5`](https://github.com/Aetherinox/csf-firewall/commit/560c20ba5) | feat(logger): add leveled debug logging helper                                           |
+| [`371ff5eea`](https://github.com/Aetherinox/csf-firewall/commit/371ff5eea) | chore(getips): re-write module                                                           |
+| [`5390afc2d`](https://github.com/Aetherinox/csf-firewall/commit/5390afc2d) | chore: import `ConfigServer::Logger` in module `Sendmail`                                |
+
+**Key Changes:**
+
+- `Logger::logfile()` rewritten: forms `logfile(message)`, `logfile(status, message)` and
+  `logfile(type, status, message)` with types `normal`, `root`, `all`, `DEBUG:0`-`DEBUG:5`;
+  named or numeric status (FAIL/OK/WARN/ABORT/INFO), a separate root log `lfd-root.log`,
+  caller tag `file:line->sub()`, lazy config/syslog loading, and a result hashref for
+  written or suppressed lines (was `undef`)
+- `logfile()` gates `DEBUG:1`-`DEBUG:5` lines against `csf.conf` `DEBUG` (official
+  `lfd.pl` already compared `DEBUG >= n`); the full failed Sendmail message is now
+  logged only at `DEBUG >= 2`
+- New `ConfigServer::Config->getsingle($item)` reads one `csf.conf` key without
+  running `loadconfig()` validation (used by `CheckIP.pm`)
+- `GetIPs.pm` rewritten: `getips()` renamed to `resolve()`, `hex2ip`/`ip2hex`/`ipv4in6`
+  moved in, Exporter removed (see Known Issues under Detailed Change Analysis)
 
 ### AbuseIP.pm
 
@@ -315,26 +453,26 @@ All Perl modules in `csf-firewall-aetherinox/src/ConfigServer/` directory.
 
 | Module           | Primary Changes               |
 | ---------------- | ----------------------------- |
-| `CheckIP.pm`     | Header updates, formatting    |
+| `CheckIP.pm`     | See CheckIP.pm section above  |
 | `CloudFlare.pm`  | Header updates, formatting    |
-| `Config.pm`      | Configuration parsing updates |
+| `Config.pm`      | Config parsing; `getsingle()` (see Logger.pm section) |
 | `GetEthDev.pm`   | Network device detection      |
-| `GetIPs.pm`      | IP retrieval improvements     |
+| `GetIPs.pm`      | Rewritten (see Logger.pm section, Known Issues) |
 | `KillSSH.pm`     | SSH rate limiting             |
-| `Logger.pm`      | Logging enhancements          |
+| `Logger.pm`      | See Logger.pm section above   |
 | `LookUpIP.pm`    | IP lookup functionality       |
-| `Messenger.pm`   | Messaging updates             |
+| `Messenger.pm`   | See Messenger.pm section above |
 | `Ports.pm`       | Port management               |
 | `RBLCheck.pm`    | RBL checking                  |
 | `RBLLookup.pm`   | RBL lookup                    |
 | `RegexMain.pm`   | Regex pattern matching        |
 | `Sanity.pm`      | System validation             |
-| `Sendmail.pm`    | Email sending                 |
+| `Sendmail.pm`    | Failed-message logging moved to `DEBUG:2` |
 | `ServerCheck.pm` | Server monitoring             |
 | `ServerStats.pm` | Statistics collection         |
 | `Service.pm`     | Service management            |
 | `Slurp.pm`       | File reading                  |
-| `URLGet.pm`      | URL fetching                  |
+| `URLGet.pm`      | See URLGet.pm section above   |
 | `cseUI.pm`       | CSE UI components             |
 
 ---
@@ -353,6 +491,26 @@ All platform configs have been modified with formatting updates and new options:
 | `csf.generic.conf`     | Generic Linux     |
 | `csf.interworx.conf`   | InterWorx         |
 | `csf.vesta.conf`       | VestaCP           |
+
+**Key-level differences vs official platform configs:**
+
+| Change | Files | Commit |
+| ------ | ----- | ------ |
+| `LFD_PROCESS_BIND = "0"` added | all 7 `csf*.conf` | [`a23ffc8cf`](https://github.com/Aetherinox/csf-firewall/commit/a23ffc8cf) |
+| `MESSENGERV2 = "0"` uncommented (official ships it as `#MESSENGERV2 = "0"`) | 6 platform confs (already active in `csf.conf`) | [`bb5235f48`](https://github.com/Aetherinox/csf-firewall/commit/bb5235f48) |
+| `LF_APACHE_401_PERM` line dropped during a comment reformat | `csf.cwp.conf`, `csf.cyberpanel.conf`, `csf.interworx.conf` | [`353bfe2c0`](https://github.com/Aetherinox/csf-firewall/commit/353bfe2c0) |
+| `LF_APACHE_401_PERM` line dropped during a comment reformat | `csf.vesta.conf` | [`b3a24e6fd`](https://github.com/Aetherinox/csf-firewall/commit/b3a24e6fd) |
+| `LF_APACHE_404_PERM` line dropped during a comment reformat | `csf.generic.conf` | [`353bfe2c0`](https://github.com/Aetherinox/csf-firewall/commit/353bfe2c0) |
+| `RT_POPRELAY_ALERT` / `_LIMIT` / `_BLOCK` present (absent from official) | `csf.directadmin.conf` | [`43a2a7d6e`](https://github.com/Aetherinox/csf-firewall/commit/43a2a7d6e) |
+
+The dropped `LF_APACHE_40x_PERM` keys are still read by `lfd.pl` (`disable401`/`disable404`).
+`defaults.txt` lists both at `3600`, but nothing merges it into the loaded config
+(`getdefault()` has no callers), so on these platforms the key is undefined, `lfd.pl`
+sets `$perm = 1`, and `LF_APACHE_401`/`LF_APACHE_404` blocks become permanent instead of
+3600-second temporary blocks. Impact is limited to admins who enable those features
+(both default to `"0"`). Both removals landed on 2025-10-07 in config-reformat commits
+(`353bfe2c0` is titled "chore(ssl): update ssl cert and key for web interface"), so they
+look accidental.
 
 ### Allow and Ignore Lists
 
@@ -483,6 +641,18 @@ Commit [`ea9c86b60`](https://github.com/Aetherinox/csf-firewall/commit/ea9c86b60
 | `global.sh`                 | POSIX compliancy refactoring (+102/-441 lines)       |
 | `csfpre.sh`                 | POSIX compliancy refactoring                         |
 | `csfpost.sh`                | POSIX compliancy refactoring                         |
+| `install.*.sh` (7 files)    | Also copy `messenger/*.html` on install/update ([`d82b1fc68`](https://github.com/Aetherinox/csf-firewall/commit/d82b1fc68)) |
+
+### Messenger Web Files
+
+These three files matched official CSF through `da3f5c13e` (2026-06-16) and diverged
+in September 2026:
+
+| File | Changes | Commits |
+| ---- | ------- | ------- |
+| `messenger/index.php` | `HTTP_ACCEPT_LANGUAGE` lowercased and whitelisted to `^[a-z]{2}$`; language and `recaptcha.php` loaded via `dirname(__DIR__)` with `is_file()` checks | [`1e7f9ada3`](https://github.com/Aetherinox/csf-firewall/commit/1e7f9ada3) |
+| `messenger/index.html` | Logo swapped from PNG to SVG data URI (also in `index.php` and `index.recaptcha.php`) | [`1e7f9ada3`](https://github.com/Aetherinox/csf-firewall/commit/1e7f9ada3) |
+| `messenger/index.recaptcha.php` | cURL connect/total timeouts; JSON response validation (`success`, `hostname`); `htmlspecialchars()` on reflected `REQUEST_URI` and hostnames (reflected XSS fix); unblock-file write checked and logged (the page still shows success if the write fails); error logging | [`904d9a65f`](https://github.com/Aetherinox/csf-firewall/commit/904d9a65f), [`568f9a309`](https://github.com/Aetherinox/csf-firewall/commit/568f9a309) |
 
 ### Documentation
 
@@ -527,6 +697,14 @@ Commit [`ea9c86b60`](https://github.com/Aetherinox/csf-firewall/commit/ea9c86b60
 | Private network blocking     | Option to block private network ranges                   |
 | Sponsor hardening            | Eliminate client-side trust in sponsor functionality     |
 | UI sanitization              | Use `textContent` instead of `innerHTML` to prevent XSS  |
+| URLGet command injection fix | curl/wget fallback runs an argv list, not a shell string ([`edb5bd01f`](https://github.com/Aetherinox/csf-firewall/commit/edb5bd01f)) |
+| URLGet input validation      | Reject control chars, non-HTTP(S) schemes, URLs > 2,048 chars ([`b0e295a28`](https://github.com/Aetherinox/csf-firewall/commit/b0e295a28), [`049834e94`](https://github.com/Aetherinox/csf-firewall/commit/049834e94)) |
+| URLGet secret redaction      | License/API key/token values redacted from logs and errors ([`0ac5932f8`](https://github.com/Aetherinox/csf-firewall/commit/0ac5932f8)) |
+| Messenger privilege check    | Refuse to run Messenger v1/v2/v3 as uid/gid 0 ([`f9168fa9e`](https://github.com/Aetherinox/csf-firewall/commit/f9168fa9e)) |
+| reCAPTCHA secret permissions | `recaptcha.php` written `0600` instead of `0644` ([`f13f3aa96`](https://github.com/Aetherinox/csf-firewall/commit/f13f3aa96)) |
+| reCAPTCHA page hardening     | Escape reflected `REQUEST_URI`/hostnames, validate Google response ([`904d9a65f`](https://github.com/Aetherinox/csf-firewall/commit/904d9a65f)) |
+| Messenger language whitelist | `index.php` accepts only `^[a-z]{2}$` language codes ([`1e7f9ada3`](https://github.com/Aetherinox/csf-firewall/commit/1e7f9ada3)) |
+| `/0` CIDR rejection          | `checkip()`/`cccheckip()` reject IPv4/IPv6 `/0` prefixes ([`03e635d44`](https://github.com/Aetherinox/csf-firewall/commit/03e635d44)) |
 
 ### Bug Fixes
 
@@ -542,6 +720,10 @@ Commit [`ea9c86b60`](https://github.com/Aetherinox/csf-firewall/commit/ea9c86b60
 | UI gap in Firewall Configuration         | [`8853f98f5`](https://github.com/Aetherinox/csf-firewall/commit/8853f98f5) |
 | Webmin settings button JS                | [`df6dc4651`](https://github.com/Aetherinox/csf-firewall/commit/df6dc4651) |
 | DirectAdmin install error                | [`e8254d031`](https://github.com/Aetherinox/csf-firewall/commit/e8254d031) |
+| lfd startup syntax (missing semicolons)  | [`c57aa3a2f`](https://github.com/Aetherinox/csf-firewall/commit/c57aa3a2f) |
+| URLGet duplicate request per call        | [`57b210322`](https://github.com/Aetherinox/csf-firewall/commit/57b210322) |
+| URLGet completed-request log order       | [`1d23805ce`](https://github.com/Aetherinox/csf-firewall/commit/1d23805ce) |
+| Invalid `<b'>` HTML in config editor (#123) | [`f379f0b63`](https://github.com/Aetherinox/csf-firewall/commit/f379f0b63) |
 
 ### New Integrations
 
@@ -999,7 +1181,61 @@ between late January and 2026-06-16, spanning releases 15.09 (2026-02-23) and 15
 - [`e972771de`](https://github.com/Aetherinox/csf-firewall/commit/e972771de) - logfile responses for POP3 and IMAP
 - [`6b3c62bc2`](https://github.com/Aetherinox/csf-firewall/commit/6b3c62bc2) - sanity check fix for `ST_ENABLE` (#114)
 - [`e771ef9a5`](https://github.com/Aetherinox/csf-firewall/commit/e771ef9a5) - resolve `csf.c` compiler warnings for `main()`/`setenv()`
-- [`da3f5c13e`](https://github.com/Aetherinox/csf-firewall/commit/da3f5c13e) - lfd logging refactor (current HEAD)
+- [`da3f5c13e`](https://github.com/Aetherinox/csf-firewall/commit/da3f5c13e) - lfd logging refactor (HEAD as of 2026-07-05)
+
+### 2026-Q3 Sync (post-15.10, v15.11 prep — through 2026-09-27)
+
+48 commits landed between `da3f5c13e` (2026-06-16) and `0fcf47be1` (2026-09-27);
+46 touch `src/` (28 files, +5,947/-1,801 lines net, per `git diff --shortstat`). The other two are CI-only
+([`de1aedf67`](https://github.com/Aetherinox/csf-firewall/commit/de1aedf67) release
+workflow prep for v15.11, [`96e5daf87`](https://github.com/Aetherinox/csf-firewall/commit/96e5daf87)
+`renovate.json`). No new release tag yet; 15.10 is still the latest.
+
+**New option: `LFD_PROCESS_BIND`** ([`a23ffc8cf`](https://github.com/Aetherinox/csf-firewall/commit/a23ffc8cf))
+
+- Default `"0"` (previous behaviour): any lfd process may validate the PID file and
+  perform a full shutdown on error.
+- `"1"` (any true value): only the master process (`$$ == $masterpid`) runs the PID-file/inode check;
+  in `sub shutdown`, a child logs `[SHUTDOWN] Child Process: ...` and exits 0 without
+  removing the PID file or stopping the daemon.
+- Not listed in `defaults.txt`; `lfd.pl` treats an undefined value as `0`.
+
+**Logging rework** ([`560c20ba5`](https://github.com/Aetherinox/csf-firewall/commit/560c20ba5),
+[`b3f100e22`](https://github.com/Aetherinox/csf-firewall/commit/b3f100e22),
+[`88b12088e`](https://github.com/Aetherinox/csf-firewall/commit/88b12088e),
+[`2c6192684`](https://github.com/Aetherinox/csf-firewall/commit/2c6192684))
+
+- `logfile(message)`, `logfile(status, message)` or `logfile(type, status, message)`;
+  types `normal`, `root`, `all`, `DEBUG:0`-`DEBUG:5`.
+- `DEBUG:1`-`DEBUG:5` lines are written only when `csf.conf` `DEBUG` is at or above
+  that level; `DEBUG:0` is always written.
+- Root-only messages go to `lfd-root.log` without loading the CSF config.
+- Each line carries a `file:line->sub()` source tag (`::global` outside a sub).
+
+**New modules:**
+
+- `ConfigServer/Debug.pm` ([`0fcf47be1`](https://github.com/Aetherinox/csf-firewall/commit/0fcf47be1),
+  788 lines): debug helper (`log()` to stderr; `getopts()`/`dump()` format text) driven by the
+  `DEBUG` environment variable, not `csf.conf`. Nothing imports it yet.
+- `ConfigServer/Secrets.pm` ([`e789a9d76`](https://github.com/Aetherinox/csf-firewall/commit/e789a9d76),
+  71 lines): staged stub with no subs and no trailing `1;`, so `require` fails with
+  "did not return a true value". `Debug.pm` lazily requires it (levels 1-4) and then calls
+  `redact_obj_log`/`redact_obj_field`, which do not exist yet.
+
+**Security hardening:** URLGet argv execution, URL validation and secret redaction;
+Messenger root-uid refusal and `0600` secret file; reCAPTCHA page output escaping;
+`index.php` language whitelist; `/0` CIDR rejection. See the URLGet.pm, Messenger.pm,
+CheckIP.pm and Messenger Web Files sections above.
+
+**Known issues (static analysis plus minimal Perl reproductions; not run on a live server):**
+
+| Issue | Location | Introduced |
+| ----- | -------- | ---------- |
+| `ServerCheck.pm` has not compiled on `main` since `209005481` (2026-03-01); the 15.10 release copy compiles. At HEAD, `332a26cde` removed the `sub report {` header, leaving the report body at file scope and an unmatched `}` ("Unmatched right curly bracket"). `csf.pl` and `DisplayUI.pm` both `use ConfigServer::ServerCheck`, so on current `main` the `csf` command and the web UI fail to load, and `ConfigServer::ServerCheck::report()` no longer exists for its two callers. Verified by compiling each revision with stub dependencies. | `ConfigServer/ServerCheck.pm:194`; callers `csf.pl:43`, `csf.pl:6321`, `ConfigServer/DisplayUI.pm:44`, `ConfigServer/DisplayUI.pm:1139` | [`209005481`](https://github.com/Aetherinox/csf-firewall/commit/209005481), [`332a26cde`](https://github.com/Aetherinox/csf-firewall/commit/332a26cde) |
+| `GetIPs.pm` no longer defines `getips()` or uses Exporter, but callers still `use ConfigServer::GetIPs qw(getips)`. The import compiles silently and the call dies with `Undefined subroutine`. In Messenger v1 the call sits inside the child's `eval`, so a reCAPTCHA unblock request fails silently (Google returns a hostname). The `whmcheck` call (cPanel, hostname nameservers) will die the same way once `ServerCheck.pm` compiles again. | `ConfigServer/Messenger.pm:535` (`messenger`), `ConfigServer/ServerCheck.pm:1365` (`whmcheck`); unused import in `RBLCheck.pm:37` | [`371ff5eea`](https://github.com/Aetherinox/csf-firewall/commit/371ff5eea) |
+| Same failure mode, older: `ServerCheck.pm` does `use ConfigServer::Sanity qw(sanity)` and calls `sanity()` for each `csf.conf` setting in `firewallcheck`, but `Sanity.pm` no longer exports it (official does). Once `ServerCheck.pm` compiles again, every Server Security Check report will die here. | `ConfigServer/ServerCheck.pm:37`, `ConfigServer/ServerCheck.pm:466` | [`3659719ca`](https://github.com/Aetherinox/csf-firewall/commit/3659719ca) (2026-03-05) |
+| Language hardening from `index.php` was not applied to `index.recaptcha.php`, which still uses `substr(HTTP_ACCEPT_LANGUAGE,0,2)` with `file_exists()`. It still sets `CURLOPT_SSL_VERIFYPEER` to `false` for the Google verify call. | `messenger/index.recaptcha.php` | pre-existing (official) |
+| `Debug.pm` redaction path (`DEBUG` levels 1-4) requires `Secrets.pm`, which fails to load (no `1;`) and does not define `redact_obj_log`/`redact_obj_field` yet; nothing imports `Debug.pm` yet | `ConfigServer/Debug.pm`, `ConfigServer/Secrets.pm` | [`0fcf47be1`](https://github.com/Aetherinox/csf-firewall/commit/0fcf47be1), [`e789a9d76`](https://github.com/Aetherinox/csf-firewall/commit/e789a9d76) |
 
 ---
 
@@ -1021,6 +1257,7 @@ All new configuration options added by the Aetherinox fork:
 | `SPONSOR_LICENSE`         | `""`    | License key (hides sponsor if set)               | -     |
 | `SPONSOR_RELEASE_INSIDERS`| `"0"`   | Enable Insiders release channel                  | -     |
 | `UI_WEBMIN_SHOW_BUTTON_CONFIG` | `"1"` | Show the config button in the Webmin module UI | -     |
+| `LFD_PROCESS_BIND`        | `"0"`   | `1` = only the lfd parent process may check the PID file and stop the daemon; children log and exit individually | -     |
 
 ---
 
@@ -1085,7 +1322,26 @@ UI commits:
 - [`209005481`](https://github.com/Aetherinox/csf-firewall/commit/209005481) - Auto-disable services (Server Services Check)
 - [`dcb125f37`](https://github.com/Aetherinox/csf-firewall/commit/dcb125f37) - Preserve user comments on csf updates
 - [`ee1139396`](https://github.com/Aetherinox/csf-firewall/commit/ee1139396) - Dovecot 2.4 log support
-- [`da3f5c13e`](https://github.com/Aetherinox/csf-firewall/commit/da3f5c13e) - lfd logging refactor (HEAD)
+- [`da3f5c13e`](https://github.com/Aetherinox/csf-firewall/commit/da3f5c13e) - lfd logging refactor (HEAD as of 2026-07-05)
+
+2026-Q3 sync commits (post-15.10, v15.11 prep):
+
+- [`edb5bd01f`](https://github.com/Aetherinox/csf-firewall/commit/edb5bd01f) - URLGet: argv execution, removes shell command injection
+- [`b0e295a28`](https://github.com/Aetherinox/csf-firewall/commit/b0e295a28) - URLGet: reject control chars and non-HTTP(S) URLs
+- [`0ac5932f8`](https://github.com/Aetherinox/csf-firewall/commit/0ac5932f8) - URLGet: redact secrets in logs/errors
+- [`57b210322`](https://github.com/Aetherinox/csf-firewall/commit/57b210322) - URLGet: remove duplicate request
+- [`f9168fa9e`](https://github.com/Aetherinox/csf-firewall/commit/f9168fa9e) - Messenger: refuse root uid/gid
+- [`f13f3aa96`](https://github.com/Aetherinox/csf-firewall/commit/f13f3aa96) - Messenger: `recaptcha.php` mode 0600
+- [`904d9a65f`](https://github.com/Aetherinox/csf-firewall/commit/904d9a65f) - reCAPTCHA page hardening (output escaping, response validation)
+- [`1e7f9ada3`](https://github.com/Aetherinox/csf-firewall/commit/1e7f9ada3) - Messenger `index.php` language whitelist
+- [`03e635d44`](https://github.com/Aetherinox/csf-firewall/commit/03e635d44) - CheckIP: reject `/0` prefixes
+- [`378f639f1`](https://github.com/Aetherinox/csf-firewall/commit/378f639f1) - CheckIP module update (v15.11)
+- [`a23ffc8cf`](https://github.com/Aetherinox/csf-firewall/commit/a23ffc8cf) - New option `LFD_PROCESS_BIND`
+- [`b3f100e22`](https://github.com/Aetherinox/csf-firewall/commit/b3f100e22) - Logger rewrite (types, DEBUG levels, root log)
+- [`3c061d50f`](https://github.com/Aetherinox/csf-firewall/commit/3c061d50f) - Config: new `getsingle()`
+- [`371ff5eea`](https://github.com/Aetherinox/csf-firewall/commit/371ff5eea) - GetIPs rewrite (`getips` → `resolve`; see Known Issues)
+- [`e789a9d76`](https://github.com/Aetherinox/csf-firewall/commit/e789a9d76) - New `ConfigServer/Secrets.pm` stub
+- [`0fcf47be1`](https://github.com/Aetherinox/csf-firewall/commit/0fcf47be1) - New `ConfigServer/Debug.pm` module (HEAD)
 
 Refactoring commits:
 
@@ -1093,4 +1349,4 @@ Refactoring commits:
 
 ---
 
-Last updated: 2026-07-05
+Last updated: 2026-10-02
