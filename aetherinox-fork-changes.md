@@ -60,15 +60,20 @@ The Aetherinox fork maintains versioned releases. See [all releases](https://git
 
 | Metric            | Value      |
 | ----------------- | ---------- |
-| Lines added       | 89,251     |
+| Lines added       | 88,753     |
 | Lines removed     | 34,483     |
-| Net change        | +54,768    |
+| Net change        | +54,270    |
 | Fork size (differing files only) | 13,684 KB  |
 | Official size (differing files only) | 2,962 KB   |
 | Size difference   | +10,722 KB |
 
 Note: size figures sum only the modified and new files compared between trees
 (full-tree byte totals are ~19,295 KB fork vs ~8,573 KB official).
+
+Line counts cover text files only. Binary files (5 modified, 15 new; PNG logos and
+sprites) are not line-counted. Before 2026-10-02 the 525 newline bytes inside new PNGs
+were counted as added lines, and the last line of 27 new text files without a final
+newline was not (net -498).
 
 ### Most Changed Files (by commit count)
 
